@@ -29,7 +29,16 @@
             <button>Login</button>
           </a>
         </div>
-        <div class="menuToggle" onclick="toggleMenu()"></div>
+        <!-- Botón para abrir/cerrar el menú -->
+        <div
+          class="menuToggle"
+          onclick="toggleMenu()"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        ></div>
+
+        <!-- Fondo oscuro que aparece cuando el menú está abierto -->
+        <div class="overlay" onclick="toggleMenu()" aria-hidden="true"></div>
       </div>
     </header>
     <section id="hero">
