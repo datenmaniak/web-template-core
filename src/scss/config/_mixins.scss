@@ -1,0 +1,111 @@
+@use "sass:color";
+@use 'sass:map';
+
+@use '../core/' as core;
+
+$breakpoints: (
+    phone-small: 320px,
+    // Teléfonos muy pequeños (modo retrato)
+    phone: 576px,
+    // Teléfonos estándar
+    tablet: 768px,
+    // Tablets verticales
+    laptop: 992px,
+    // Laptops y tablets horizontales
+    desktop: 1200px // Escritorios grandes
+);
+
+@mixin respond($device) {
+    $value: map.get($breakpoints, $device);
+
+    @if $value {
+        @media (min-width: $value) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "El breakpoint '#{$device}' no está definido en \$breakpoints.";
+    }
+}
+
+// @mixin button-style($bg: core.$primary,
+//     $color: white,
+//     $radius: 5px,
+//     $padding: 10px 20px,
+//     $font-size: 1.2em,
+//     $border: 2px solid rgba(0, 0, 0, 0.3),
+//     $shadow: 0 2px 6px rgba(0, 0, 0, 0.5),
+//     $hover-bg: darken($bg, 7%)) {
+//     padding: $padding;
+//     font-weight: bold;
+//     background: $bg;
+//     color: $color;
+//     font-size: $font-size;
+//     border-radius: $radius;
+//     border: $border;
+//     box-shadow: $shadow;
+//     text-align: center;
+//     width: 100px;
+//     cursor: pointer;
+//     transition: background 0.3s ease;
+
+//     &:hover {
+//         background-color: $hover-bg;
+//     }
+// }
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin grid-responsive($gap: 2rem) {
+    display: grid;
+    gap: $gap;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 480px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@mixin grid-fluid($min: 250px, $gap: 2rem) {
+    display: grid;
+    gap: $gap;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+    padding: 0 40px;
+}
+
+@mixin button-style($bg: core.$primary,
+    $color: white,
+    $radius: 5px,
+    $padding: 10px 20px,
+    $font-size: 1.2em,
+    $border: 2px solid rgba(0, 0, 0, 0.3),
+    $shadow: 0 2px 6px rgba(0, 0, 0, 0.5),
+    // Aquí usamos color.adjust en lugar de darken
+    $hover-bg: color.adjust($bg, $lightness: -7%)) {
+    padding: $padding;
+    font-weight: bold;
+    background: $bg;
+    color: $color;
+    font-size: $font-size;
+    border-radius: $radius;
+    border: $border;
+    box-shadow: $shadow;
+    text-align: center;
+    width: 100px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background-color: $hover-bg;
+    }
+}

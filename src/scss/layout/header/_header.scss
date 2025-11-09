@@ -1,0 +1,71 @@
+@use "../../core/" as core;
+@use '../../config/mixins' as mix;
+
+.header {
+  &__container {
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    position: fixed;
+    //   background-color: var(--bg-primary);
+    // background-color: ;
+    // background-color: ;
+    background-color: core.$bg-primary;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
+    gap: 1rem;
+    min-height: 80px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    /* backdrop-filter: blur(8px); */
+
+    // @include mix.respond(tablet) {
+    //   background-color: lightgreen;
+    // }
+
+    // end-block .container
+  }
+
+  // &__logo {
+  //   /* flex-direction: column; */
+  //   display: flex;
+  //   justify-content: space-around;
+  //   align-items: center;
+  //   margin: 0;
+  //   left: 0;
+  //   padding: 10px 10px;
+  //   color: core.$primary;
+  // }
+
+  // &__logo img {
+  //   width: 50px;
+  //   background-image: url('assets/img/logo.png');
+  // }
+
+  // &__logo a {
+  //   /* padding: 10px 10px; */
+  //   font-size: 1.2rem;
+  //   padding-right: 20px;
+  // }
+
+  // start-block Mobiles first
+  .header__login {
+    font-weight: 500;
+    font-size: 1.1rem;
+    // LEARN - por defecto Mobile First. No se muestra
+    display: none;
+
+    @include mix.respond(tablet) {
+      display: flex;
+    }
+  }
+
+  .header__login:hover {
+    background-color: rgba(179, 51, 234, 0.729);
+    color: white;
+  }
+
+
+  // end-BLOCK .header
+}

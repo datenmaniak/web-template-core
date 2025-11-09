@@ -1,0 +1,40 @@
+@use '../core/variables' as core;
+
+.about-us {
+  &__container {
+    background-color: core.$primary;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-around;
+    margin-top: 2rem;
+
+    .about-us__img {
+      background-image: url("../../../assets/img/helena-lopes-2MBtXGq4Pfs-unsplash.jpg");
+      // background-image: linear-gradient(0deg,
+      // rgba(0, 0, 0, 0.5),
+      // rgba(0, 0, 0, 0.5)),
+      // url("../../../assets/img/helena-lopes-2MBtXGq4Pfs-unsplash.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+  }
+
+  .about-us__description {
+    color: white;
+
+  }
+
+
+  p {
+    text-align: justify;
+    padding: 1rem 3rem;
+    color: white;
+  }
+
+
+}

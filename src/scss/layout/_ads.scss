@@ -1,0 +1,15 @@
+@use '../core/' as core;
+
+.ads__container {
+  margin-top: 50px;
+  background-color: core.$blue;
+  color: white;
+  text-align: justify;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding: 1rem 2rem;
+}
+
+.ads__container h2 {
+  text-align: center;
+}

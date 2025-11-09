@@ -1,0 +1,38 @@
+@use "../../core/" as core;
+@use '../../config/mixins' as mix;
+
+nav {
+
+
+  .nav__options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-direction: row;
+    // LEARN - por defecto Mobile First. No se muestra
+    display: none;
+
+    @include mix.respond(tablet) {
+      display: flex;
+    }
+
+  }
+
+  .nav__options li a {
+    border-radius: 5px;
+    padding: 0.5em 0.7rem;
+    /* background-color: white; */
+  }
+
+  .nav__options li a:hover {
+    background-color: #a08fb0;
+    color: whitesmoke;
+    background-color: rgba(172, 107, 207, 0.383);
+    color: black;
+  }
+
+
+
+}

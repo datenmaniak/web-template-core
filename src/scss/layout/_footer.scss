@@ -1,0 +1,45 @@
+@use '../core/' as core;
+
+.footer {
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+    color: core.$beige;
+    gap: 1rem;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    background-color: #0e0b12;
+    color: var(--beige);
+    text-align: center;
+    // background: whitesmoke;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__logo img {
+    width: 90px;
+    color: white;
+  }
+
+  &__container p {
+    text-align: center;
+    color: whitesmoke;
+  }
+
+  &__container h4 {
+    text-align: start;
+  }
+
+  &__container ul li {
+    text-align: left;
+    text-align: start;
+  }
+
+
+}

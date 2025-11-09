@@ -1,0 +1,19 @@
+@use '../core/' as core;
+
+button {
+  padding: 10px 20px;
+  font-weight: bold;
+  // background-color: core.$
+  background: core.$primary;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2em;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+
+}
+
+button:hover {
+  background-color: #5303a2;
+}
