@@ -1,5 +1,7 @@
 @use '../core' as core;
 @use "sass:map";
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
 
 // font-size: 62.5% → Esto convierte el tamaño base de fuente del 
 // navegador (normalmente 16px) en 10px (16 × 0.625). 

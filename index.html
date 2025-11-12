@@ -1,255 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menu simple con flex</title>
-    <link rel="stylesheet" href="build/css/main.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__container">
-        <!-- <div class="header__logo">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu simple con flex</title>
+  <link rel="stylesheet" href="build/css/main.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <!-- <div class="header__logo">
           <a href="#">Brand-name</a>
         </div> -->
 
-        <div class="logo__container">
-          <a href="/" class="branding" aria-label="Inicio">
-            <!-- src="assets/logo.svg" -->
-            <img
-              src="assets/img/Copilot_20251106_193652.png"
-              alt="Logo Violet Pulse"
-              width="50"
-              height="50"
-            />
-            <span class="site-name">Violet Pulse</span>
-          </a>
-        </div>
-
-        <nav>
-          <ul class="nav__options active">
-            <li><a href="">Inicio </a></li>
-            <li>
-              <a href="">Proveedores</a>
-            </li>
-            <li><a href="">Productos</a></li>
-          </ul>
-        </nav>
-        <div
-          class="menuToggle"
-          onclick="toggleMenu()"
-          aria-label="Abrir menú"
-          aria-expanded="false"
-        ></div>
-
-        <div class="header__login">
-          <a href="">
-            <button>Login</button>
-          </a>
-        </div>
-        <!-- Botón para abrir/cerrar el menú -->
-
-        <!-- Fondo oscuro que aparece cuando el menú está abierto -->
-        <div class="overlay" onclick="toggleMenu()" aria-hidden="true"></div>
+      <div class="logo__container">
+        <a href="/" class="branding" aria-label="Inicio">
+          <!-- src="assets/logo.svg" -->
+          <img src="assets/img/Copilot_20251106_193652.png" alt="Logo Violet Pulse" width="50" height="50" />
+          <span class="site-name">Violet Pulse</span>
+        </a>
       </div>
-    </header>
-    <section id="hero" class="hero">
-      <div class="hero__container">
-        <div class="hero__img"></div>
-        <div class="hero__invitation">
-          <h1>Registra tus productos con nosotros</h1>
-          <a href="">
-            <button>Explora las opciones</button>
-          </a>
-        </div>
-      </div>
-    </section>
 
-    <section id="about-us" class="about-us">
-      <div class="about-us__container">
-        <div class="about-us__img">
-          <!-- <img src="img/about-us/helena-lopes-2MBtXGq4Pfs-unsplash.jpg" alt="" /> -->
-        </div>
-        <div class="about-us__description">
-          <h2>Quiénes somos</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing eli quis modi aut
-            delectus fuga saepe sed. harum dolorum nihil, labore ut facilis
-            aperiam pariatur ipsum.
-          </p>
-        </div>
-      </div>
-    </section>
+      <nav>
+        <ul class="nav__options active">
+          <li><a href="">Inicio </a></li>
+          <li>
+            <a href="">Proveedores</a>
+          </li>
+          <li><a href="">Productos</a></li>
+        </ul>
+      </nav>
+      <div class="menuToggle" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false"></div>
 
-    <section id="ads" class="ads">
-      <div class="ads__container">
-        <div class="ads__img"></div>
-        <h2>Publicidad</h2>
+      <div class="header__login">
+        <a href="">
+          <button>Login</button>
+        </a>
+      </div>
+      <!-- Botón para abrir/cerrar el menú -->
+
+      <!-- Fondo oscuro que aparece cuando el menú está abierto -->
+      <div class="overlay" onclick="toggleMenu()" aria-hidden="true"></div>
+    </div>
+  </header>
+  <section id="hero" class="hero">
+    <div class="hero__container">
+      <div class="hero__img"></div>
+      <div class="hero__invitation">
+        <h1>Registra tus productos con nosotros</h1>
+        <a href="">
+          <button>Explora las opciones</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-us" class="about-us">
+    <div class="about-us__container">
+      <div class="about-us__img">
+        <!-- <img src="img/about-us/helena-lopes-2MBtXGq4Pfs-unsplash.jpg" alt="" /> -->
+      </div>
+      <div class="about-us__description">
+        <h2>Quiénes somos</h2>
         <p>
-          rem ipsum dolor sit amet consectetur adipisicing elit. Tenetur nobis
-          is modi aut delectus fuga saepe sed eum quos temporibus possimus rum
-          dolorum nihil, labore ut facilis aperiam pariatur ipsum.
+          Lorem ipsum dolor sit amet consectetur adipisicing eli quis modi aut
+          delectus fuga saepe sed. harum dolorum nihil, labore ut facilis
+          aperiam pariatur ipsum.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="products" class="products">
-      <h2>Productos a la venta</h2>
-      <div class="products__container">
-        <article class="card">
+  <section id="ads" class="ads">
+    <div class="ads__container">
+      <div class="ads__img"></div>
+      <h2>Publicidad</h2>
+      <p>
+        rem ipsum dolor sit amet consectetur adipisicing elit. Tenetur nobis
+        is modi aut delectus fuga saepe sed eum quos temporibus possimus rum
+        dolorum nihil, labore ut facilis aperiam pariatur ipsum.
+      </p>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <h2>Productos a la venta</h2>
+    <div class="products__container">
+      <article class="card">
+        <div class="card__badge">Más vendido</div>
+        <figure class="card__image">
+          <img src="assets/img/seyed-sina-fazeli-XP9JF6jyRGc-unsplash.jpg" alt="Descripción de la imagen" />
+        </figure>
+        <h3 class="card__title">card 1</h3>
+        <p class="card__description">
+          Breve descripción del contenido, beneficios o características
+          destacadas.
+        </p>
+        <a href="#" class="card__button">Explorar</a>
+      </article>
+      <article class="card">
+        <div class="card__badge"></div>
+        <figure class="card__image">
+          <img src="assets/img/seyed-sina-fazeli-XP9JF6jyRGc-unsplash.jpg" alt="Descripción de la imagen" />
+        </figure>
+        <h3 class="card__title">card 2</h3>
+        <p class="card__description">
+          Breve descripción del contenido, beneficios o características
+          destacadas.
+        </p>
+        <a href="#" class="card__button">Explorar</a>
+      </article>
+      <article class="card">
+        <div class="card__badge"></div>
+        <figure class="card__image">
+          <img src="assets/img/seyed-sina-fazeli-XP9JF6jyRGc-unsplash.jpg" alt="Descripción de la imagen" />
+        </figure>
+        <h3 class="card__title">card 3</h3>
+        <p class="card__description">
+          Breve descripción del contenido, beneficios o características
+          destacadas.
+        </p>
+        <a href="#" class="card__button">Explorar</a>
+      </article>
+      <article class="card">
+        <div class="card__badge"></div>
+        <figure class="card__image">
+          <img src="assets/img/seyed-sina-fazeli-XP9JF6jyRGc-unsplash.jpg" alt="Descripción de la imagen" />
+        </figure>
+        <h3 class="card__title">card 4</h3>
+        <p class="card__description">
+          Breve descripción del contenido, beneficios o características
+          destacadas.
+        </p>
+        <a href="#" class="card__button">Explorar</a>
+      </article>
+      <article class="card">
+        <div class="card__badge"></div>
+        <figure class="card__image">
+          <img src="assets/img/seyed-sina-fazeli-XP9JF6jyRGc-unsplash.jpg" alt="Descripción de la imagen" />
+        </figure>
+        <h3 class="card__title">card 5</h3>
+        <p class="card__description">
+          Breve descripción del contenido, beneficios o características
+          destacadas.
+        </p>
+        <a href="#" class="card__button">Explorar</a>
+      </article>
+
+      <article class="card-2">
+        <figure class="card__img">
           <div class="card__badge">Más vendido</div>
-          <figure class="card__image">
-            <img
-              src="assets/img/seyed-sina-fazeli-XP9JF6jyRGc-unsplash.jpg"
-              alt="Descripción de la imagen"
-            />
-          </figure>
-          <h3 class="card__title">card 1</h3>
-          <p class="card__description">
-            Breve descripción del contenido, beneficios o características
-            destacadas.
-          </p>
-          <a href="#" class="card__button">Explorar</a>
-        </article>
-        <article class="card">
-          <div class="card__badge"></div>
-          <figure class="card__image">
-            <img
-              src="assets/img/seyed-sina-fazeli-XP9JF6jyRGc-unsplash.jpg"
-              alt="Descripción de la imagen"
-            />
-          </figure>
-          <h3 class="card__title">card 2</h3>
-          <p class="card__description">
-            Breve descripción del contenido, beneficios o características
-            destacadas.
-          </p>
-          <a href="#" class="card__button">Explorar</a>
-        </article>
-        <article class="card">
-          <div class="card__badge"></div>
-          <figure class="card__image">
-            <img
-              src="assets/img/seyed-sina-fazeli-XP9JF6jyRGc-unsplash.jpg"
-              alt="Descripción de la imagen"
-            />
-          </figure>
-          <h3 class="card__title">card 3</h3>
-          <p class="card__description">
-            Breve descripción del contenido, beneficios o características
-            destacadas.
-          </p>
-          <a href="#" class="card__button">Explorar</a>
-        </article>
-        <article class="card">
-          <div class="card__badge"></div>
-          <figure class="card__image">
-            <img
-              src="assets/img/seyed-sina-fazeli-XP9JF6jyRGc-unsplash.jpg"
-              alt="Descripción de la imagen"
-            />
-          </figure>
-          <h3 class="card__title">card 4</h3>
-          <p class="card__description">
-            Breve descripción del contenido, beneficios o características
-            destacadas.
-          </p>
-          <a href="#" class="card__button">Explorar</a>
-        </article>
-        <article class="card">
-          <div class="card__badge"></div>
-          <figure class="card__image">
-            <img
-              src="assets/img/seyed-sina-fazeli-XP9JF6jyRGc-unsplash.jpg"
-              alt="Descripción de la imagen"
-            />
-          </figure>
-          <h3 class="card__title">card 5</h3>
-          <p class="card__description">
-            Breve descripción del contenido, beneficios o características
-            destacadas.
-          </p>
-          <a href="#" class="card__button">Explorar</a>
-        </article>
 
-        <article class="card-2">
-          <figure class="card__img">
-            <div class="card__badge">Más vendido</div>
-
-            <img src="assets/img/niclas-illg-wzVQp_NRIHg-unsplash.jpg" alt="" />
-          </figure>
-          <h3>Teclados</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <a href="#" class="card__button">Más info</a>
-        </article>
-        <article class="card-2">
-          <div class="card__badge">Más vendido</div>
           <img src="assets/img/niclas-illg-wzVQp_NRIHg-unsplash.jpg" alt="" />
-          <h3>Teclados</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <a href="#" class="card__button">Más info</a>
-        </article>
+        </figure>
+        <h3>Teclados</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <a href="#" class="card__button">Más info</a>
+      </article>
+      <article class="card-2">
+        <div class="card__badge">Más vendido</div>
+        <img src="assets/img/niclas-illg-wzVQp_NRIHg-unsplash.jpg" alt="" />
+        <h3>Teclados</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <a href="#" class="card__button">Más info</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="palette container-narrow">
+    <!-- Coolors Palette Widget -->
+    <script src="https://coolors.co/palette-widget/widget.js"></script>
+    <script data-id="019378684313780092">
+      new CoolorsPaletteWidget("019378684313780092", [
+        "7700F0",
+        "B1A8B9",
+        "392A46",
+        "3E89AC",
+        "B4CAD7",
+      ]);
+    </script>
+  </section>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Branding -->
+      <div class="footer-column footer-branding">
+        <img src="assets/img/Copilot_20251106_193652.png" alt="Logo" />
+        <a href="/">
+          <h2>ACME Company</h2>
+        </a>
+        
+        <!-- <p>Construyendo soluciones modulares.</p> -->
       </div>
-    </section>
 
-    <section class="palette container-narrow">
-      <!-- Coolors Palette Widget -->
-      <script src="https://coolors.co/palette-widget/widget.js"></script>
-      <script data-id="019378684313780092">
-        new CoolorsPaletteWidget("019378684313780092", [
-          "7700F0",
-          "B1A8B9",
-          "392A46",
-          "3E89AC",
-          "B4CAD7",
-        ]);
-      </script>
-    </section>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
-      integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <footer id="footer" class="footer">
-      <div class="footer__container">
-        <div class="footer__logo">
-          <img src="assets/img/logo.png" alt="logo" />
-          <a href="#">Brand-name</a>
-        </div>
-
-        <div class="footer__menu">
-          <h4>Cuentas</h4>
-          <ul>
-            <li><a href="">Autogestion de cuenta</a></li>
-            <li><a href="">Registro</a></li>
-          </ul>
-        </div>
-        <div class="footer__about-us">
-          <h4>Acerca de</h4>
-          <ul>
-            <li><a href="#about-us">Sobre nosotros</a></li>
-            <li><a href="">Como funciona</a></li>
-            <li><a href="">Noticias</a></li>
-            <li><a href="">Equipo</a></li>
-            <li><a href=""></a></li>
-          </ul>
-        </div>
-        <div class="footer__terms">
-          <!-- <p>Términos</p> -->
-          <h4>Términos</h4>
-          <ul>
-            <li><a href="">Política de Privacidad</a></li>
-            <li><a href="">Términos y condiciones</a></li>
-          </ul>
-        </div>
-        <p>&copy; Brand-name 2025</p>
+      <!-- Menú -->
+      <div class="footer-column footer-menu">
+        <h3>Menú</h3>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Proyectos</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
       </div>
-    </footer>
 
-    <!-- <script src="js/hide-menu.js"></script> -->
-    <script src="build/js/bundle.js"></script>
-  </body>
+      <!-- Otras secciones -->
+      <div class="footer-column footer-links">
+        <h3>Recursos</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Documentación</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto / Social -->
+      <div class="footer-column footer-contact">
+        <h3>Contacto</h3>
+        <p class="contact-item">Email: info@mimarca.com</p>
+        <p class="contact-item">Tel: +58 123 456 789</p>
+
+        <div class="social-icons">
+          <a href="https://instagram.com/mimarca" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="https://wa.me/58123456789" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <i class="ri-whatsapp-line"></i>
+          </a>
+          <a href="https://t.me/mimarca" target="_blank" aria-label="Telegram">
+            <i class="fab fa-telegram"></i>
+            <i class="ri-telegram-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="build/js/bundle.js"></script>
+</body>
+
 </html>
