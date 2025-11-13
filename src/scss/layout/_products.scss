@@ -7,7 +7,7 @@
 
 .products {
   width: 100%;
-  background-color: core.$primary;
+  // background-color: core.$primary;
 
   &__container {
     @include container($container-widths);
@@ -15,8 +15,6 @@
     justify-content: center;
     align-content: center;
 
-    // remove 
-    background-color: lightgreen;
 
     h2 {
       text-align: center;
@@ -26,165 +24,157 @@
     // @include mix.respond(tablet) {
 
     // margin: 5px 8px;
-    background-color: rgba(243, 237, 237, 0.7);
     // @include mix.grid-responsive(1.5rem);
     @include grid-fluid(250px, 1.7rem);
 
+    // Fondo del contenedor de .card
+    // background-color: rgba(243, 237, 237, 0.7);
+    .card {
+      max-width: 320px;
+      padding-bottom: 20px;
+      border: 1px solid core.$bg-secondary;
+      overflow: hidden;
+      border-radius: 8px;
+      text-align: center;
+      margin: 20px 20px;
+      // /* sombra sutil hacia derecha y abajo */
+      box-shadow: 6px 8px 16px rgba(60, 60, 60, 0.25);
+
+      &__badge {
+        // position: relative;
+        top: 0;
+        right: 5;
+
+        background: rgb(28, 227, 121);
+        color: black;
+        padding: 0.25rem 0.75rem;
+        // border-radius: core.$radius-badge;
+        font-size: 1.2rem;
+        font-weight: 700;
+        object-fit: cover;
+        border-radius: 0 2px 1px 0px;
+        text-transform: uppercase;
+      }
+
+      &__image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        // aspect-ratio: 20 / 18;
+      }
+
+      // figure img {
+      //   display: block;
+      //   width: 100%;
+      //   height: auto;
+      //   // aspect-ratio: 16 / 9 ;
+      // }
+
+      &__title {
+        margin: 1rem 0 0.5rem;
+        // font-size: 1.85rem;
+      }
+
+      // h3,
+      p {
+        font-family: core.$alt-font;
+        font-weight: 400;
+      }
+
+      &__description {
+        // font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 1rem;
+      }
+
+      // // END-block .card
+      // .card button {
+      //   @include button-style(core.$primary);
+      //   display: inline-block;
+      //   background: core.$blue;
+      //   color: core.$color-button-text;
+      //   padding: 0.5rem 1rem;
+      //   border-radius: core.$radius-badge;
+      //   text-decoration: non;
+      //   font-weight: 600;
+      //   transition: background 0.3s;
+
+      // }
+
+      // img {
+      //   display: block;
+      //   width: 100%;
+      //   height: auto;
+      //   color: core.$primary;
+      // }
+    }
+
+    .card:hover {
+      /* al pasar el mouse, sombra más marcada */
+      box-shadow: 10px 12px 24px rgba(60, 60, 60, 0.35);
+
+      /* opcional: ligero "lift" */
+      transform: translateY(-4px);
+    }
+
+
+    .card.model-b,
+    .card.model-c {
+      display: block;
+      width: 90%;
+      border: 1px solid core.$gray;
+      border-radius: 0 0 8px 8px;
+      color: core.$brown;
+      // Nueva config
+      // border-radius: core.$radius-card;
+      text-align: center;
+      margin: 20px 20px;
+      padding-bottom: 20px;
+      // background-color: rgba(223, 209, 225, 0.511);
+      // /* sombra profunda en gris */
+      // box-shadow: 0 8px 20px rgba(60, 60, 60, 0.6);
+      // /* sombra sutil gris */
+      box-shadow: 0 2px 6px rgba(60, 60, 60, 0.25);
+      // /* sombra sutil hacia derecha y abajo */
+      box-shadow: 6px 8px 16px rgba(60, 60, 60, 0.25);
+      /* sombra solo derecha y abajo */
+      box-shadow: 8px 10px 18px rgba(92, 92, 93, 0.25);
+    }
+
+    .card-model-b:hover,
+    .card-model-c:hover {
+      /* al pasar el mouse, sombra más marcada */
+      box-shadow: 10px 12px 24px rgba(60, 60, 60, 0.35);
+
+      /* opcional: ligero "lift" */
+      transform: translateY(-4px);
+    }
+
+
   }
+
 }
 
-// .products__container {
-
-// @include mix.grid(3, 2rem);
-
-
-.card {
-
-  width: 90%;
-  background-color: rgba(223, 209, 225, 0.511);
-  background-color: core.$bg-card;
-  padding-bottom: 20px;
-  border: 1px solid core.$bg-secondary;
-  border-radius: 8px;
-  text-align: center;
-  margin: 20px 20px;
-  // /* sombra sutil hacia derecha y abajo */
-  box-shadow: 6px 8px 16px rgba(60, 60, 60, 0.25);
 
 
 
-  &__badge {
-    position: relative;
-    top: 0;
-    right: 5;
-
-    background: rgb(245, 86, 0);
-    color: rgb(224, 211, 211);
-    padding: 0.25rem 0.75rem;
-    // border-radius: core.$radius-badge;
-    font-size: 1.2rem;
-    font-weight: 700;
-    object-fit: cover;
-    border-radius: 0 2px 1px 0px;
-    text-transform: uppercase;
-  }
-
-  &__image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    aspect-ratio: 16 / 9;
-    aspect-ratio: 20 / 18;
-
-  }
-
-  &__title {
-    margin: 1rem 0 0.5rem;
-    font-size: 1.25rem;
-  }
-
-  &__description {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 1rem;
-  }
-
-  &__button {
-    @include button-style(core.$primary);
-    // display: inline-block;
-    // background: core.$color-button-bg;
-    // color: core.$color-button-text;
-    // padding: 0.5rem 1rem;
-    // border-radius: core.$radius-badge;
-    // text-decoration: non;
-    // font-weight: 600;
-    // transition: background 0.3s;
-
-  }
-
-  .ads-label {
-    background-color: lightblue;
-    height: 20px;
-  }
-
-  h3,
-  p {
-    font-family: core.$alt-font;
-    font-weight: 400;
-  }
 
 
 
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
-    color: core.$primary;
-  }
 
-  // end-block .card
+
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: core.$primary;
 }
 
-.card:hover {
-  /* al pasar el mouse, sombra más marcada */
-  box-shadow: 10px 12px 24px rgba(60, 60, 60, 0.35);
-
-  /* opcional: ligero "lift" */
-  transform: translateY(-4px);
-}
+// end-block .card
 
 
 
 
 // end-block .products__container
-
-.card-2 {
-  display: block;
-  width: 90%;
-  border: 1px solid core.$gray;
-  border-radius: 0 0 8px 8px;
-  color: core.$brown;
-  // Nueva config
-  // border-radius: core.$radius-card;
-  text-align: center;
-  margin: 20px 20px;
-  padding-bottom: 20px;
-  // background-color: rgba(223, 209, 225, 0.511);
-  // /* sombra profunda en gris */
-  // box-shadow: 0 8px 20px rgba(60, 60, 60, 0.6);
-  // /* sombra sutil gris */
-  box-shadow: 0 2px 6px rgba(60, 60, 60, 0.25);
-  // /* sombra sutil hacia derecha y abajo */
-  box-shadow: 6px 8px 16px rgba(60, 60, 60, 0.25);
-  /* sombra solo derecha y abajo */
-  box-shadow: 8px 10px 18px rgba(92, 92, 93, 0.25);
-}
-
-.card-2:hover {
-  /* al pasar el mouse, sombra más marcada */
-  box-shadow: 10px 12px 24px rgba(60, 60, 60, 0.35);
-
-  /* opcional: ligero "lift" */
-  transform: translateY(-4px);
-}
-
-
-
-figure img {
-  width: 100%;
-  height: auto;
-  // display: block;
-  object-fit: cover;
-  aspect-ratio: 20 / 18;
-  aspect-ratio: 16 / 12;
-}
-
-h3,
-p {
-  font-family: core.$alt-font;
-  font-weight: 400;
-}
-
-.card__button {
-  @include button-style(core.$blue);
-}

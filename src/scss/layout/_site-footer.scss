@@ -6,11 +6,13 @@
     width: 100%;
     color: #eee;
     margin-top: 2rem;
-    background-color: core.$primary;
+    // background-color: core.$primary;
     
     
     &-container {
+        
          @include container($container-widths);
+         padding-bottom: 5rem;
         background-color: core.$brown;
         @include grid-fluid(250px, 1.8rem);
         // display: grid;

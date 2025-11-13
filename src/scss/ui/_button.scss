@@ -1,5 +1,9 @@
 @use '../core/' as core;
 
+
+button {
+  all: unset;
+}
 button {
   padding: 10px 20px;
   font-weight: bold;
@@ -7,7 +11,7 @@ button {
   background: core.$primary;
   border-radius: 5px;
   color: white;
-  // font-size: 1.2em;
+  font-size: .90em;
   border: 2px solid rgba(0, 0, 0, 0.3);
   box-shadow: 1px solid rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
@@ -16,4 +20,17 @@ button {
 
 button:hover {
   background-color: #5303a2;
+}
+
+.btn {
+  background: oklch(50.015% 0.29417 284.081);
+  border-radius: 8px;
+  color: #fff;
+  padding: 1rem;
+}
+
+@layer base {
+  .btn {
+    display: inline-block;
+  }
 }
