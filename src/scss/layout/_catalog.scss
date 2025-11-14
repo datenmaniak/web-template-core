@@ -12,8 +12,12 @@
         }
 
         @include grid-fluid(250px, 1.5rem);
+        // fuerza que todas las cards tengan la misma altura
+        align-items: stretch;
 
         .card {
+            // position: relative;
+
             max-width: 350px;
             border: 1px solid core.$bg-secondary;
             border-radius: 8px;
@@ -23,7 +27,11 @@
             padding: 1rem;
             box-shadow: 6px 8px 16px rgba(60, 60, 60, 0.25);
 
+
+
             &__badge {
+                position: absolute;
+
                 background: rgb(28, 227, 121);
                 padding: 0.25rem 0.75rem;
                 font-size: 1.2rem;
@@ -86,8 +94,88 @@
             }
 
             &--featured {
+                position: relative;
+                overflow: visible; // permite que los elementos sobresalgan
                 border-color: core.$primary;
                 box-shadow: 0 0 10px rgba(core.$primary, 0.3);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+                // border: 2px solid #7700F0;
+
+                .card__picture {
+                    position: relative;
+                }
+
+                // Badge con pseudo-elemento
+                .card__picture::after {
+                    content: "Destacado";
+                    position: absolute;
+                    top: 10rem; // distancia desde arriba
+                    right: -2.5rem; // esquina superior derecha
+                    background: #7700F0; // tu color de branding
+                    background: orangered;
+                    color: #fff;
+                    padding: 0.4rem 0.8rem;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    border-radius: 4px;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+                }
+
+                // .card__badge,
+                /* descomentar si desea incluir con efecto */
+                .card__stars {
+                    position: absolute;
+                    opacity: 0; // ocultos por defecto
+                    transform: translateY(-20px); // desplazados hacia arriba
+                    // animation: slideDown 0.8s ease-out forwards;
+                    transition: all 0.6s ease-out;
+                }
+
+                .card__stars {
+                    // position: absolute;
+                    top: -1.75rem; // borde superior
+                    left: 1.5rem; // borde izquierdo
+                    font-size: 2rem;
+                    color: #00b300; // verde intenso
+                    letter-spacing: 2px; // separación entre estrellas
+                    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); // opcional para resaltar
+                    animation-delay: 0.2s; // aparece un poco después
+                }
+
+                .card__badge {
+                    position: absolute;
+                    top: -1.5rem;
+                    right: 1.8rem;
+                    background: #7700F0;
+                    color: #fff;
+                    padding: 0.4rem 0.8rem;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    border-radius: 4px;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+                    animation-delay: 0.4s; // aparece después de las estrellas
+                }
+
+                // Al hacer hover sobre la tarjeta
+                &:hover {
+
+                    .card__stars,
+                    .card__badge {
+                        opacity: 1; // aparecen
+                        transform: translateY(0); // bajan a su posición final
+                    }
+
+                    .card__stars {
+                        animation: slideDown 0.8s ease-out forwards;
+
+                        transition-delay: 0.1s; // estrellas primero
+                    }
+
+                    .card__badge {
+                        transition-delay: 0.3s; // badge después
+                    }
+                }
+
             }
 
             &--minimal {
@@ -104,6 +192,66 @@
                 .card__description {
                     color: core.$brown;
                 }
+            }
+
+            // BEGIN card--split
+            &--split {
+                display: flex;
+                flex-direction: column;
+                // height: 100%;
+                // max-height: 300px; // asegura que la tarjeta tenga altura definida
+
+                .card__picture {
+                    flex: 0 0 40%; // ocupa el 40% de la altura
+                    width: 100%;
+                    margin: 0;
+                    overflow: hidden;
+
+                }
+
+                .card__img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; // imagen recortada si es necesario
+                    display: block;
+                }
+
+                .card__body {
+                    // flex: 1 0 50%; // ocupa el resto (50%)
+                    flex: 1;
+                    padding: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between; // distribuye título, descripción y botón
+                }
+
+                .card__title {
+                    margin: 0 0 0.5rem;
+                }
+
+                .card__description {
+                    flex-grow: 1;
+                    margin-bottom: 1rem;
+                    margin: 0 0 0.5rem;
+
+                    color: core.$brown;
+                }
+            }
+
+            // END card-split
+
+        }
+
+        /* Animación */
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
     }

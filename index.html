@@ -91,7 +91,7 @@
     <div class="catalog__grid">
 
       <article class="card card--standard">
-        <div class="card__badge">En oferta</div>
+        <!-- <div class="card__badge">En oferta</div> -->
 
         <picture class="card__picture">
           <!-- WebP único -->
@@ -119,8 +119,15 @@
         </a>
       </article>
 
+
+
       <article class="card card--featured">
-        <div class="card__badge">Más vendido</div>
+        <!-- Estrellas en la esquina superior izquierda -->
+        <div class="card__stars">★★★★★</div>
+
+        <!-- Badge en la esquina superior derecha -->
+        <div class="card__badge">Premium</div>
+
         <picture class="card__picture">
           <!-- WebP único -->
           <source srcset="./build/img/daniel-korpai-oOlPR-Fwd7A-unsplash.webp" type="image/webp">
@@ -148,6 +155,8 @@
       </article>
 
       <article class="card card--minimal">
+        <!-- Badge en la esquina superior derecha -->
+        <div class="card__badge">minimal</div>
         <picture class="card__picture">
           <!-- WebP único -->
           <source srcset="./build/img/akhil-yerabati-Q2uV5TkjNz8-unsplash.webp" type="image/webp">
@@ -173,8 +182,41 @@
         </a>
       </article>
 
+
+      <!-- 14.11.25 -->
+      <article class="card card--split">
+        <div class="card__badge">Split</div>
+
+        <picture class="card__picture">
+          <!-- WebP único -->
+          <source srcset="./build/img/krishna-kumar-mNOVV4Ple2A-unsplash.webp" type="image/webp">
+
+          <!-- JPG con tres tallas -->
+          <source srcset="
+        ./build/img/krishna-kumar-mNOVV4Ple2A-unsplash-sm.jpg 600w,
+        ./build/img/krishna-kumar-mNOVV4Ple2A-unsplash-md.jpg 1024w,
+        ./build/img/krishna-kumar-mNOVV4Ple2A-unsplash-lg.jpg 1600w" sizes="(max-width: 600px) 100vw,
+               (max-width: 1024px) 50vw,
+              33vw" type="image/jpeg">
+
+          <!-- Fallback absoluto -->
+          <img class="card__img" src="./build/img/krishna-kumar-mNOVV4Ple2A-unsplash-lg.jpg" alt="Producto split"
+            loading="lazy">
+        </picture>
+
+        <div class="card__body">
+          <h3 class="card__title">Producto split</h3>
+          <p class="card__description">La imagen ocupa el 40% de la altura. Praesent vulputate auctor tellus
+            vel. Praesent vulputate auctor
+            gravida.</p>
+          <a href="#" class="card__link">
+            <button class="btn btn--primary">Explore el producto</button>
+          </a>
+        </div>
+      </article>
+
       <article class="card card--standard">
-        <div class="card__badge">Premium</div>
+        <div class="card__badge">Standard</div>
 
         <picture class="card__picture">
           <!-- WebP único -->
@@ -203,7 +245,7 @@
       </article>
 
       <article class="card card--standard">
-        <div class="card__badge">Premium</div>
+        <div class="card__badge">Standard</div>
 
         <picture class="card__picture">
           <!-- WebP único -->
@@ -235,7 +277,7 @@
   </section> <!-- catalog -->
 
 
-  <section class="palette container-narrow">
+  <section class="palette">
     <!-- Coolors Palette Widget -->
     <script src="https://coolors.co/palette-widget/widget.js"></script>
     <script data-id="019378684313780092">
@@ -252,6 +294,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
     integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <footer class="footer">
     <div class="footer-container">
       <!-- Branding -->
