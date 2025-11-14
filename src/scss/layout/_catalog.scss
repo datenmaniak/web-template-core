@@ -1,0 +1,110 @@
+@use '../core/' as core;
+@use "../config/" as *;
+
+.catalog {
+    width: 100%;
+    @include container($container-widths);
+
+    &__grid {
+        h2 {
+            text-align: center;
+            font-family: core.$secondary-font;
+        }
+
+        @include grid-fluid(250px, 1.5rem);
+
+        .card {
+            max-width: 350px;
+            border: 1px solid core.$bg-secondary;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 2rem;
+            margin: 1rem;
+            padding: 1rem;
+            box-shadow: 6px 8px 16px rgba(60, 60, 60, 0.25);
+
+            &__badge {
+                background: rgb(28, 227, 121);
+                padding: 0.25rem 0.75rem;
+                font-size: 1.2rem;
+                font-weight: 700;
+                border-radius: 0 2px 1px 0px;
+                text-transform: uppercase;
+            }
+
+            &__img {
+                // display: block;
+                width: 100%;
+                object-fit: cover;
+                aspect-ratio: 16 / 9;
+            }
+
+            &__title {
+                margin: 1rem 0 0.5rem;
+                font-size: 1.85rem;
+                font-family: core.$alt-font;
+            }
+
+            &__description {
+                color: #555;
+                color: core.$brown;
+                margin-bottom: 1rem;
+                font-family: core.$alt-font;
+            }
+
+            &:hover {
+                box-shadow: 10px 12px 24px rgba(60, 60, 60, 0.35);
+                transform: translateY(-4px);
+            }
+
+            // Variantes
+            &--standard {
+                background-color: #fff;
+
+                .card__picture {
+                    display: block;
+                    width: 100%;
+                    // height: auto;
+                    margin: 0;
+                    // border-radius: 0;
+                }
+
+                card__img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    border-radius: 8px 8px 0 0; // esquinas redondeadas solo arriba
+                    object-fit: cover;
+                    aspect-ratio: 16 / 9; // proporción hero
+                }
+
+                // opcional: si quieres que solo la imagen toque el borde superior
+                .card__picture {
+                    margin-top: 0rem; // compensa el padding de la tarjeta
+                }
+
+            }
+
+            &--featured {
+                border-color: core.$primary;
+                box-shadow: 0 0 10px rgba(core.$primary, 0.3);
+            }
+
+            &--minimal {
+                // background: transparent;
+                border: none;
+                border: 1px solid core.$bg-secondary;
+
+                // box-shadow: none;
+
+                .card__title {
+                    font-size: 2rem;
+                }
+
+                .card__description {
+                    color: core.$brown;
+                }
+            }
+        }
+    }
+}

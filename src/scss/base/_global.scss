@@ -1,6 +1,7 @@
 @use '../core' as core;
 @use "sass:map";
-@import "~@fortawesome/fontawesome-free/css/all.css";
+@use "sass:math";
+// @import "~@fortawesome/fontawesome-free/css/all.css";
 
 
 // font-size: 62.5% → Esto convierte el tamaño base de fuente del 
@@ -178,4 +179,11 @@ body,
 header {
     margin: 0;
     padding: 0;
+}
+
+section {
+    margin-top: math.div(core.$margin-vertical-spacing, 2);
+    // margin-bottom: math.div(core.$margin-vertical-spacing,2);
+    margin-bottom: core.$margin-vertical-spacing;
+
 }

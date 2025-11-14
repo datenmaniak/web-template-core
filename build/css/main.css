@@ -1,7 +1,5 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import "~@fortawesome/fontawesome-free/css/all.css";
 /* Document
  * ========================================================================== */
 /**
@@ -516,6 +514,11 @@ header {
   padding: 0;
 }
 
+section {
+  margin-top: 3.5rem;
+  margin-bottom: 7rem;
+}
+
 .container-fluid {
   margin: 0 auto;
   padding: 0 15px;
@@ -890,124 +893,114 @@ nav .nav__options li a:hover {
   text-align: center;
 }
 
-.products {
+.catalog {
   width: 100%;
-}
-.products__container {
   margin: 0 auto;
   padding: 0 15px;
 }
 @media (min-width: 576px) {
-  .products__container {
+  .catalog {
     max-width: 540px;
   }
 }
 @media (min-width: 768px) {
-  .products__container {
+  .catalog {
     max-width: 720px;
   }
 }
 @media (min-width: 992px) {
-  .products__container {
+  .catalog {
     max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
-  .products__container {
+  .catalog {
     max-width: 1140px;
   }
 }
-.products__container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-.products__container h2 {
+.catalog__grid h2 {
   text-align: center;
   font-family: "Inter", sans-serif;
 }
-.products__container {
+.catalog__grid {
   display: grid;
-  gap: 1.7rem;
+  gap: 1.5rem;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   padding: 0 40px;
 }
-.products__container .card {
-  max-width: 320px;
-  padding-bottom: 20px;
+.catalog__grid .card {
+  max-width: 350px;
   border: 1px solid rgba(188, 199, 199, 0.383);
-  overflow: hidden;
   border-radius: 8px;
   text-align: center;
-  margin: 20px 20px;
+  margin-bottom: 2rem;
+  margin: 1rem;
+  padding: 1rem;
   box-shadow: 6px 8px 16px rgba(60, 60, 60, 0.25);
 }
-.products__container .card__badge {
-  top: 0;
-  right: 5;
+.catalog__grid .card__badge {
   background: rgb(28, 227, 121);
-  color: black;
   padding: 0.25rem 0.75rem;
   font-size: 1.2rem;
   font-weight: 700;
-  -o-object-fit: cover;
-     object-fit: cover;
   border-radius: 0 2px 1px 0px;
   text-transform: uppercase;
 }
-.products__container .card__image img {
-  display: block;
+.catalog__grid .card__img {
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  aspect-ratio: 16/9;
 }
-.products__container .card__title {
+.catalog__grid .card__title {
   margin: 1rem 0 0.5rem;
-}
-.products__container .card p {
+  font-size: 1.85rem;
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
 }
-.products__container .card__description {
+.catalog__grid .card__description {
   color: #555;
-  margin-bottom: 1rem;
-}
-.products__container .card:hover {
-  /* al pasar el mouse, sombra más marcada */
-  box-shadow: 10px 12px 24px rgba(60, 60, 60, 0.35);
-  /* opcional: ligero "lift" */
-  transform: translateY(-4px);
-}
-.products__container .card.model-b,
-.products__container .card.model-c {
-  display: block;
-  width: 90%;
-  border: 1px solid #b4cad7;
-  border-radius: 0 0 8px 8px;
   color: #392a46;
-  text-align: center;
-  margin: 20px 20px;
-  padding-bottom: 20px;
-  box-shadow: 0 2px 6px rgba(60, 60, 60, 0.25);
-  box-shadow: 6px 8px 16px rgba(60, 60, 60, 0.25);
-  /* sombra solo derecha y abajo */
-  box-shadow: 8px 10px 18px rgba(92, 92, 93, 0.25);
+  margin-bottom: 1rem;
+  font-family: "Roboto", sans-serif;
 }
-.products__container .card-model-b:hover,
-.products__container .card-model-c:hover {
-  /* al pasar el mouse, sombra más marcada */
+.catalog__grid .card:hover {
   box-shadow: 10px 12px 24px rgba(60, 60, 60, 0.35);
-  /* opcional: ligero "lift" */
   transform: translateY(-4px);
 }
-
-img {
+.catalog__grid .card--standard {
+  background-color: #fff;
+}
+.catalog__grid .card--standard .card__picture {
   display: block;
   width: 100%;
+  margin: 0;
+}
+.catalog__grid .card--standard card__img {
+  width: 100%;
   height: auto;
-  color: #7700f0;
+  display: block;
+  border-radius: 8px 8px 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 16/9;
+}
+.catalog__grid .card--standard .card__picture {
+  margin-top: 0rem;
+}
+.catalog__grid .card--featured {
+  border-color: #7700f0;
+  box-shadow: 0 0 10px rgba(119, 0, 240, 0.3);
+}
+.catalog__grid .card--minimal {
+  border: none;
+  border: 1px solid rgba(188, 199, 199, 0.383);
+}
+.catalog__grid .card--minimal .card__title {
+  font-size: 2rem;
+}
+.catalog__grid .card--minimal .card__description {
+  color: #392a46;
 }
 
 .footer {

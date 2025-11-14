@@ -1,7 +1,7 @@
 @forward "header/index";
 @forward "about-us";
 @forward 'ads';
-@forward 'products';
-
+// @forward 'products';    /* reemplazado por catalog.scss */
+@forward "catalog";
 // @forward "footer";
 @forward "site-footer";

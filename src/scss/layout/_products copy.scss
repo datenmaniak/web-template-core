@@ -1,0 +1,126 @@
+@use '../core/' as core;
+@use "../config/" as *;
+
+
+.products {
+  width: 100%;
+  // background-color: core.$primary;
+  @include container($container-widths);
+}
+
+.products__container {
+
+  // Title
+  h2 {
+    text-align: center;
+    font-family: core.$secondary-font;
+  }
+
+  // @include grid-responsive(1.5rem);
+  // @include  grid(3, 1.5rem);
+  @include grid-fluid(250px, 1.7rem);
+
+  .card {
+    max-width: 320px;
+    padding-bottom: 20px;
+    border: 1px solid core.$bg-secondary;
+    overflow: hidden;
+    border-radius: 8px;
+    text-align: center;
+    margin: 2rem 2rem;
+
+    // /* sombra sutil hacia derecha y abajo */
+    box-shadow: 6px 8px 16px rgba(60, 60, 60, 0.25);
+    padding: 1rem;
+
+    &__badge {
+      // position: absolute;
+      top: 0;
+      right: 5;
+
+      background: rgb(28, 227, 121);
+      color: black;
+      padding: 0.25rem 0.75rem;
+      // border-radius: core.$radius-badge;
+      font-size: 1.2rem;
+      font-weight: 700;
+      object-fit: cover;
+      border-radius: 0 2px 1px 0px;
+      text-transform: uppercase;
+    }
+
+
+
+    picture img {
+      display: block;
+      width: 100%;
+      height: auto;
+      // object-fit: cover;
+      aspect-ratio: 16 / 9;
+    }
+
+    h3,
+    p {
+      font-family: core.$alt-font;
+      font-weight: 400;
+      background-color: lightskyblue;
+    }
+
+    &__title {
+      margin: 1rem 0 0.5rem;
+      font-size: 1.85rem;
+      background-color: magenta;
+    }
+
+
+    .card__description {
+      // font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1rem;
+      background-color: cyan;
+    }
+
+  }
+
+  .card:hover {
+    /* al pasar el mouse, sombra más marcada */
+    box-shadow: 10px 12px 24px rgba(60, 60, 60, 0.35);
+
+    /* opcional: ligero "lift" */
+    transform: translateY(-4px);
+  }
+
+}
+
+
+.card .model-b,
+.card .model-c {
+  display: block;
+  width: 90%;
+  border: 1px solid core.$gray;
+  border-radius: 0 0 8px 8px;
+  color: core.$brown;
+  // Nueva config
+  // border-radius: core.$radius-card;
+  text-align: center;
+  margin: 20px 20px;
+  padding-bottom: 20px;
+  // background-color: rgba(223, 209, 225, 0.511);
+  // /* sombra profunda en gris */
+  // box-shadow: 0 8px 20px rgba(60, 60, 60, 0.6);
+  // /* sombra sutil gris */
+  box-shadow: 0 2px 6px rgba(60, 60, 60, 0.25);
+  // /* sombra sutil hacia derecha y abajo */
+  box-shadow: 6px 8px 16px rgba(60, 60, 60, 0.25);
+  /* sombra solo derecha y abajo */
+  box-shadow: 8px 10px 18px rgba(92, 92, 93, 0.25);
+}
+
+.card.model-b:hover,
+.card.model-c:hover {
+  /* al pasar el mouse, sombra más marcada */
+  box-shadow: 10px 12px 24px rgba(60, 60, 60, 0.35);
+
+  /* opcional: ligero "lift" */
+  transform: translateY(-4px);
+}

@@ -158,7 +158,9 @@ function generateJSmini() {
 
 // se preserva el nombre original del archivo
 function resizeImagesForWebWithSharp(done) {
-  ensureFolder('src/img', 'carpeta de imágenes');
+  // ensureFolder('src/img', 'carpeta de imágenes');
+  console.log('Processing images from ', paths.images);
+  ensureFolder(paths.images, 'carpeta de imágenes');
   // ensureFolder(paths.images, "carpeta de imágenes");
   // const inputDir = "src/img";
   const inputDir = paths.images;
@@ -170,7 +172,7 @@ function resizeImagesForWebWithSharp(done) {
   ];
 
   if (!fs.existsSync(inputDir)) {
-    console.warn(`⚠️ La carpeta "${inputDir}" no existe.`);
+    console.log(`⚠️ La carpeta "${inputDir}" no existe.`);
     return done();
   }
 
@@ -225,7 +227,7 @@ function convertImagesToWebp(done) {
 
     if ([".jpg", ".jpeg", ".png"].includes(ext)) {
       sharp(`${inputDir}/${file}`)
-        .resize({ width: 500 })
+        .resize({ width: 700 })
         .toFormat("webp")
         .toFile(`${outputDir}/${base}.webp`)
         .then(() => {

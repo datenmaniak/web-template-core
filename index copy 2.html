@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu simple con flex</title>
+  <link rel="stylesheet" href="build/css/main.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <!-- <div class="header__logo">
+          <a href="#">Brand-name</a>
+        </div> -->
+
+      <div class="logo__container">
+        <a href="/" class="branding" aria-label="Inicio">
+          <!-- src="assets/logo.svg" -->
+          <img src="assets/img/Copilot_20251106_193652.png" alt="Logo Violet Pulse" width="50" height="50" />
+          <span class="site-name">ACME Company</span>
+        </a>
+      </div>
+
+      <nav>
+        <ul class="nav__options active">
+          <li><a href="">Inicio </a></li>
+          <li>
+            <a href="">Proveedores</a>
+          </li>
+          <li><a href="">Productos</a></li>
+        </ul>
+      </nav>
+      <div class="menuToggle" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false"></div>
+
+      <div class="header__login">
+        <a href="">
+          <button>Login</button>
+        </a>
+      </div>
+      <!-- Botón para abrir/cerrar el menú -->
+
+      <!-- Fondo oscuro que aparece cuando el menú está abierto -->
+      <div class="overlay" onclick="toggleMenu()" aria-hidden="true"></div>
+    </div>
+  </header>
+  <section id="hero" class="hero">
+    <div class="hero__container">
+      <div class="hero__img"></div>
+      <div class="hero__invitation">
+        <h1>Registra tus productos con nosotros</h1>
+        <a href="">
+          <button>Explora las opciones</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-us" class="about-us">
+    <div class="about-us__container">
+      <div class="about-us__img">
+        <!-- <img src="img/about-us/helena-lopes-2MBtXGq4Pfs-unsplash.jpg" alt="" /> -->
+      </div>
+      <div class="about-us__description">
+        <h2>Quiénes somos</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing eli quis modi aut
+          delectus fuga saepe sed. harum dolorum nihil, labore ut facilis
+          aperiam pariatur ipsum.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ads" class="ads">
+    <div class="ads__container">
+      <div class="ads__img"></div>
+      <h2>Publicidad</h2>
+      <p>
+        rem ipsum dolor sit amet consectetur adipisicing elit. Tenetur nobis
+        is modi aut delectus fuga saepe sed eum quos temporibus possimus rum
+        dolorum nihil, labore ut facilis aperiam pariatur ipsum.
+      </p>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <h2>Catálogo de productos</h2>
+
+    <div class="products__container">
+
+      <article class="card model-a">
+        <div class="card__badge">Premium</div>
+        <picture>
+          <source srcset="./build/img/alienware-Hpaq-kBcYHk-unsplash-sm.webp" type="image/webp">
+          <source srcset="./build/img/alienware-Hpaq-kBcYHk-unsplash-sm.jpg" type="image/jpeg">
+          <img loading="lazy" src="./build/img/alienware-Hpaq-kBcYHk-unsplash-sm.jpg" alt="alienware">
+        </picture>
+
+   
+        <h3 class="card__title">card 5</h3>
+        <p class="card__description">
+          Breve descripción del contenido, beneficios o características
+          destacadas.
+        </p>
+        <a href="/">
+          <button class="">Ver detalles</button>
+        </a>
+      </article>
+
+      <article class="card model-b">
+        <picture class="card__img">
+          <div class="card__badge">Más vendido</div>
+
+          <img src="build/img/akhil-yerabati-Q2uV5TkjNz8-unsplash-md.jpg" alt="" />
+        </picture>
+        <h3>Teclados</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <a href="#">
+          <button class="btn">Ver más detalles</button>
+        </a>
+      </article>
+
+      <article class="card model-c">
+        <div class="card__badge">Más vendido</div>
+        <img src="build/img/i-m-zion-7MvFxGjWWVs-unsplash-sm.jpg" alt="" />
+        <h3>Teclados</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <a href="#">
+          <button class="btn">Ver más detalles</button>
+        </a>
+      </article>
+
+      <article class="card model-a">
+        <div class="card__badge">Premium</div>
+        <picture>
+          <source srcset="build/img/alienware-Hpaq-kBcYHk-unsplash-sm.webp" type="image/webp">
+          <source srcset="build/img/alienware-Hpaq-kBcYHk-unsplash-sm.jpg" type="image/jpeg">
+          <img loading="lazy" src="build/img/techmanis-HaqBDOuQBdM-unsplash-sm.jpg" alt="alienware">
+        </picture>
+
+     
+        <h3 class="card__title">card 5</h3>
+        <p class="card__description">
+          Breve descripción del contenido, beneficios o características
+          destacadas.
+        </p>
+        <a href="/">
+          <button class="">Ver detalles</button>
+        </a>
+      </article>
+
+      <article class="card model-a">
+        <div class="card__badge">Premium</div>
+        <picture>
+          <source srcset="build/img/alienware-Hpaq-kBcYHk-unsplash-sm.webp" type="image/webp">
+          <source srcset="build/img/alienware-Hpaq-kBcYHk-unsplash-sm.jpg" type="image/jpeg">
+          <img loading="lazy" src="build/img/alienware-Hpaq-kBcYHk-unsplash-sm.jpg" alt="alienware">
+        </picture>
+
+        <!-- <picture class="card__image">
+          <img loading="lazy" src="assets/img/seyed-sina-fazeli-XP9JF6jyRGc-unsplash.jpg"
+            alt="Descripción de la imagen" />
+        </picture> -->
+        <h3 class="card__title">card 5</h3>
+        <p class="card__description">
+          Breve descripción del contenido, beneficios o características
+          destacadas.
+        </p>
+        <a href="/">
+          <button class="">Ver detalles</button>
+        </a>
+      </article>
+
+    </div> <!-- products__container -->
+  </section> <!-- products -->
+
+  <section class="palette container-narrow">
+    <!-- Coolors Palette Widget -->
+    <script src="https://coolors.co/palette-widget/widget.js"></script>
+    <script data-id="019378684313780092">
+      new CoolorsPaletteWidget("019378684313780092", [
+        "7700F0",
+        "B1A8B9",
+        "392A46",
+        "3E89AC",
+        "B4CAD7",
+      ]);
+    </script>
+  </section>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Branding -->
+      <div class="footer-column footer-branding">
+        <img src="assets/img/Copilot_20251106_193652.png" alt="Logo" />
+        <a href="/">
+          <h2>ACME Company</h2>
+        </a>
+
+        <!-- <p>Construyendo soluciones modulares.</p> -->
+      </div>
+
+      <!-- Menú -->
+      <div class="footer-column footer-menu">
+        <h3>Menú</h3>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Proyectos</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Otras secciones -->
+      <div class="footer-column footer-links">
+        <h3>Recursos</h3>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Documentación</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto / Social -->
+      <div class="footer-column footer-contact">
+        <h3>Contacto</h3>
+        <p class="contact-item">Email: info@datenmaniak.com</p>
+        <p class="contact-item">Tel: +58 (424) 248 6169</p>
+
+        <div class="social-icons">
+          <a href="https://instagram.com/datenmaniak" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="https://wa.me/584242486169" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <i class="ri-whatsapp-line"></i>
+          </a>
+          <a href="https://t.me/datenmaniak" target="_blank" aria-label="Telegram">
+            <i class="fab fa-telegram"></i>
+            <i class="ri-telegram-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="build/js/bundle.js"></script>
+</body>
+
+</html>

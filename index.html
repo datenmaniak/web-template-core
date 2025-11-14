@@ -85,50 +85,155 @@
     </div>
   </section>
 
-  <section id="products" class="products">
+  <section id="catalog" class="catalog">
     <h2>Catálogo de productos</h2>
-    <div class="products__container">
 
-      <article class="card model-a">
-        <div class="card__badge">Premium</div>
-        <figure class="card__image">
-          <img src="assets/img/seyed-sina-fazeli-XP9JF6jyRGc-unsplash.jpg" alt="Descripción de la imagen" />
-        </figure>
-        <h3 class="card__title">card 5</h3>
-        <p class="card__description">
-          Breve descripción del contenido, beneficios o características
-          destacadas.
+    <div class="catalog__grid">
+
+      <article class="card card--standard">
+        <div class="card__badge">En oferta</div>
+
+        <picture class="card__picture">
+          <!-- WebP único -->
+          <source srcset="./build/img/i-m-zion-7MvFxGjWWVs-unsplash.webp" type="image/webp">
+
+          <!-- JPG con tres tallas -->
+          <source srcset="
+      ./build/img/i-m-zion-7MvFxGjWWVs-unsplash-sm.jpg 600w,
+      ./build/img/i-m-zion-7MvFxGjWWVs-unsplash-md.jpg 1024w,
+      ./build/img/i-m-zion-7MvFxGjWWVs-unsplash-lg.jpg 1600w" sizes="(max-width: 600px) 100vw,
+           (max-width: 1024px) 50vw,
+           33vw" type="image/jpeg">
+
+          <!-- Fallback por defecto -->
+          <img class="card__img" src="./build/img/i-m-zion-7MvFxGjWWVs-unsplash-lg.jpg" alt="Producto destacado"
+            loading="lazy">
+        </picture>
+
+
+        <h3 class="card__title">Producto estándar</h3>
+        <p class="card__description">Praesent vulputate auctor tellus vel gravida. Nam ac commodo nisl, at laoreet odio.
         </p>
-         <a href="/">
-          <button class="btn">Ver más detalles</button>
+        <a href="/" class="card__link">
+          <button class="btn btn--primary">Ver detalles</button>
         </a>
       </article>
 
-      <article class="card model-b">
-        <figure class="card__img">
-          <div class="card__badge">Más vendido</div>
-
-          <img src="assets/img/niclas-illg-wzVQp_NRIHg-unsplash.jpg" alt="" />
-        </figure>
-        <h3>Teclados</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <a href="#">
-          <button class="btn">Ver más detalles</button>
-        </a>
-
-      </article>
-
-      <article class="card model-c">
+      <article class="card card--featured">
         <div class="card__badge">Más vendido</div>
-        <img src="assets/img/niclas-illg-wzVQp_NRIHg-unsplash.jpg" alt="" />
-        <h3>Teclados</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-         <a href="#">
-          <button class="btn">Ver más detalles</button>
+        <picture class="card__picture">
+          <!-- WebP único -->
+          <source srcset="./build/img/daniel-korpai-oOlPR-Fwd7A-unsplash.webp" type="image/webp">
+
+          <!-- JPG con tres tallas -->
+          <source srcset="
+      ./build/img/daniel-korpai-oOlPR-Fwd7A-unsplash-sm.jpg 600w,
+      ./build/img/daniel-korpai-oOlPR-Fwd7A-unsplash-md.jpg 1024w,
+      ./build/img/idaniel-korpai-oOlPR-Fwd7A-unsplash-lg.jpg 1600w" sizes="(max-width: 600px) 100vw,
+           (max-width: 1024px) 50vw,
+           33vw" type="image/jpeg">
+
+          <!-- Fallback por defecto -->
+          <img class="card__img" src="./build/img/daniel-korpai-oOlPR-Fwd7A-unsplash-lg.jpg" alt="Producto destacado"
+            loading="lazy">
+        </picture>
+
+        <h3 class="card__title">Producto destacado</h3>
+        <p class="card__description">Vivamus a hendrerit justo. Maecenas mattis varius consequat. Pellentesque tempor
+          leo nec accumsan dapibus. </p>
+        <a href="#" class="card__link">
+          <button class="btn btn--primary">Ver más detalles</button>
+        </a>
+        <!-- daniel-korpai-oOlPR-Fwd7A-unsplash -->
+      </article>
+
+      <article class="card card--minimal">
+        <picture class="card__picture">
+          <!-- WebP único -->
+          <source srcset="./build/img/akhil-yerabati-Q2uV5TkjNz8-unsplash.webp" type="image/webp">
+
+          <!-- JPG con tres tallas -->
+          <source srcset="
+      ./build/img/akhil-yerabati-Q2uV5TkjNz8-unsplash-sm.jpg 600w,
+      ./build/img/akhil-yerabati-Q2uV5TkjNz8-unsplash-md.jpg 1024w,
+      ./build/img/akhil-yerabati-Q2uV5TkjNz8-unsplash-lg.jpg 1600w" sizes="(max-width: 600px) 100vw,
+           (max-width: 1024px) 50vw,
+           33vw" type="image/jpeg">
+
+          <!-- Fallback por defecto -->
+          <img class="card__img" src="./build/img/akhil-yerabati-Q2uV5TkjNz8-unsplash-lg.jpg" alt="Producto destacado"
+            loading="lazy">
+        </picture>
+
+        <h3 class="card__title">Producto minimalista</h3>
+        <p class="card__description">Vivamus a hendrerit justo. Maecenas mattis varius consequat. Pellentesque tempor
+          leo nec accumsan dapibus. </p>
+        <a href="#" class="card__link">
+          <button class="btn btn--primary">Ver más detalles</button>
         </a>
       </article>
-    </div>
-  </section>
+
+      <article class="card card--standard">
+        <div class="card__badge">Premium</div>
+
+        <picture class="card__picture">
+          <!-- WebP único -->
+          <source srcset="./build/img/fili-santillan-OWfts4TGOlo-unsplash.webp" type="image/webp">
+
+          <!-- JPG con tres tallas -->
+          <source srcset="
+      ./build/img/fili-santillan-OWfts4TGOlo-unsplash-sm.jpg 600w,
+      ./build/img/fili-santillan-OWfts4TGOlo-unsplash-md.jpg 1024w,
+      ./build/img/fili-santillan-OWfts4TGOlo-unsplash-lg.jpg 1600w" sizes="(max-width: 600px) 100vw,
+           (max-width: 1024px) 50vw,
+           33vw" type="image/jpeg">
+
+          <!-- Fallback por defecto -->
+          <img class="card__img" src="./build/img/fili-santillan-OWfts4TGOlo-unsplash-lg.jpg" alt="Producto destacado"
+            loading="lazy">
+        </picture>
+
+
+        <h3 class="card__title">Producto estándar</h3>
+        <p class="card__description">Praesent vulputate auctor tellus vel gravida. Nam ac commodo nisl, at laoreet odio.
+        </p>
+        <a href="/" class="card__link">
+          <button class="btn btn--primary">Ver detalles</button>
+        </a>
+      </article>
+
+      <article class="card card--standard">
+        <div class="card__badge">Premium</div>
+
+        <picture class="card__picture">
+          <!-- WebP único -->
+          <source srcset="./build/img/alienware-Hpaq-kBcYHk-unsplash.webp" type="image/webp">
+
+          <!-- JPG con tres tallas -->
+          <source srcset="
+      ./build/img/alienware-Hpaq-kBcYHk-unsplash-sm.jpg 600w,
+      ./build/img/alienware-Hpaq-kBcYHk-unsplash-md.jpg 1024w,
+      ./build/img/alienware-Hpaq-kBcYHk-unsplash-lg.jpg 1600w" sizes="(max-width: 600px) 100vw,
+           (max-width: 1024px) 50vw,
+           33vw" type="image/jpeg">
+
+          <!-- Fallback por defecto -->
+          <img class="card__img" src="./build/img/alienware-Hpaq-kBcYHk-unsplash-lg.jpg" alt="Producto destacado"
+            loading="lazy">
+        </picture>
+
+
+        <h3 class="card__title">Producto estándar</h3>
+        <p class="card__description">Praesent vulputate auctor tellus vel gravida. Nam ac commodo nisl, at laoreet odio.
+        </p>
+        <a href="/" class="card__link">
+          <button class="btn btn--primary">Ver detalles</button>
+        </a>
+      </article>
+      <!-- akhil-yerabati-Q2uV5TkjNz8-unsplash -->
+    </div> <!-- catalog__grid -->
+  </section> <!-- catalog -->
+
 
   <section class="palette container-narrow">
     <!-- Coolors Palette Widget -->
@@ -155,7 +260,7 @@
         <a href="/">
           <h2>ACME Company</h2>
         </a>
-        
+
         <!-- <p>Construyendo soluciones modulares.</p> -->
       </div>
 
