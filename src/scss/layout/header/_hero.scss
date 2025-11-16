@@ -4,50 +4,94 @@
 
 .hero {
   position: relative;
-  background-color: core.$primary;
   width: 100%;
+  margin-top: -3rem;
+  z-index: 1;
 
   &__container {
     @include container($container-widths);
-
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 100vh;
+    // importante para que invitation se posicione bien
+    position: relative;
     padding: 1.2rem;
 
-    // remove
-    background-color: goldenrod;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
 
+    // .hero__img {
+    //   // Set / Técnica  #1 para desplegar imagenes 
+    //   background-image: image-set(url('../../../../assets/hero/denis-hero.webp') type('image/webp') 1x,
+    //       url('../../../../assets/hero/denis-hero-sm.jpg') type('image/jpeg') 1x,
+    //       url('../../../../assets/hero/denis-hero-lg.jpg') type('image/webp') 2x,
+    //       url('../../../../assets/hero/denis-hero-lg.jpg') type('image/jpeg') 2x);
+    //   background-size: cover;
+    //   background-position: center;
+    //   width: 100%;
+    //   height: 100%;
+    // }
+
+    .hero__img {
+
+      // Técnica #2 para despliege de imagenes, automaticamente
+      background-image:
+        // linear-gradient(rgba(119, 0, 240, 0.4), rgba(119, 0, 240, 0.4)),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+        // linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), // capa oscura
+        image-set( // versión pequeña
+          url('../../../../build/img/neon-wang-2jthqzpshb0-unsplash.webp') type('image/webp') 1x,
+          url('../../../../build/img/neon-wang-2jthqzpshb0-unsplash-sm.jpg') type('image/jpeg') 1x,
+
+          // versión mediana
+          url('../../../../build/img/neon-wang-2jthqzpshb0-unsplash-md.jpg') type('image/jpeg') 1.5x,
+
+          // versión grande
+          url('../../../../build/img/neon-wang-2jthqzpshb0-unsplash-lg.jpg') type('image/jpeg') 2x);
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+    }
+
+
+
+    .hero__invitation {
+      position: absolute;
+      bottom: 25%;
+      left: 10%;
+      color: white;
+
+      // asegura que esté encima de la imagen
+      z-index: 2;
+
+      h1 {
+        font-family: core.$primary-font;
+        text-align: left;
+        font-weight: 700;
+        // font-size: 3.7rem;
+        @include responsive-font($h1-sizes);
+        line-height: 1.2;
+
+      }
+
+      button {
+        background-color: core.$primary;
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      button:hover {
+        background: core.$bg-dark-section;
+      }
+    }
   }
 
-  &__img {
-    background-image: url('../../../../assets/img/hero-lg.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-  }
-
-  &__invitation h1 {
-    // padding-top: 100px;
-    /* color: white; */
-    // font-size: 2.8rem;
-    color: core.$brown;
-    font-family: core.$primary-font;
-    text-align: left;
-    font-weight: 700;
-  }
-
-  &__invitation button {
-    /* width: 250px; */
-    // font-size: 1.2rem;
-    // background-color: core.$blue;
-    font-weight: 400;
-  }
-
-  &__invitation button:hover {
-    background: core.$bg-dark-section;
-  }
+  // END container
 }

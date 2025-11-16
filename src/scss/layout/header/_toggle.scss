@@ -14,34 +14,32 @@
   /* filter: invert(60%); */
   /* background: #7800f0; */
   padding: 0.5rem;
+  filter: invert(50%);
+
+
   // margin-right: 20px;
   transition: background-color 0.3s ease;
 
   @include mix.respond(tablet) {
     display: none;
   }
-
-  // @include mix.respond(phone) {
-  //   background-color: lightgreen;
-  // }
-
-
 }
 
 
 .menuToggle.active {
   padding: 0.2rem;
   position: relative;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   // background-image: url("icons/close.svg");
-  background-image: url("./../../../../assets/icons/close.svg");
+  background-image: url("./../../../../assets/icons/close-circle-line.svg");
   background-size: cover;
   background-repeat: no-repeat;
   cursor: pointer;
   /* filter: invert(60%); */
   /* background: #7800f0; */
   padding: 0.5rem;
+  filter: invert(50%);
   // margin-right: 20px;
 }
 

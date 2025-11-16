@@ -3,7 +3,7 @@
 
 .ads {
   width: 100%;
-  background-color: core.$primary;
+  // background-color: core.$primary;
 
   .ads__container {
     @include container($container-widths);

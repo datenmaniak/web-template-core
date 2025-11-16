@@ -5,6 +5,8 @@
 .logo__container {
     margin: 2px 10px;
 
+    flex: 0 0 auto; // logo ocupa su espacio fijo
+
     .branding {
         display: flex;
         align-items: center;
@@ -13,17 +15,21 @@
 
         img {
             display: block;
-            width: 60px;
+            width: 50px;
             height: auto;
             color: core.$primary;
+            color: #7700f0;
+            // filter: invert(90%);
         }
 
         .site-name {
             font-size: 1.2rem;
             font-weight: 600;
             color: #333;
-            // font-family: 'Violet Pulse Gothic', sans-serif;
-            margin: 3px;
+
+            /* evita que el texto se parta en varias líneas */
+            white-space: nowrap;
+
         }
 
         &:hover .site-name {
@@ -33,14 +39,15 @@
 
         @include mix.respond(tablet) {
             .site-name {
-                font-size: 1.5rem;
+                font-size: 1.35rem;
                 // font-family: 'Violet Pulse Gothic', sans-serif;
             }
 
             img {
-                width: 70px;
+                width: 60px;
             }
         }
     }
+
 
 }

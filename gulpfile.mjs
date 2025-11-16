@@ -227,7 +227,7 @@ function convertImagesToWebp(done) {
 
     if ([".jpg", ".jpeg", ".png"].includes(ext)) {
       sharp(`${inputDir}/${file}`)
-        .resize({ width: 700 })
+        .resize({ width: 840 })
         .toFormat("webp")
         .toFile(`${outputDir}/${base}.webp`)
         .then(() => {

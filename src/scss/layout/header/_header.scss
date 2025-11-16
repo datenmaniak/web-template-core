@@ -2,71 +2,90 @@
 @use "../../config" as *;
 
 .header {
+
     position: fixed;
-    width: 100%;
     top: 0;
-    left: 0;
-    z-index: 1000;
-    background-color: core.$bg-primary;
+    width: 100%;
     min-height: 7rem;
+    // left: 0;
+    z-index: 1000;
+    // transparente para que se vea la imagen detrás
+    background-color: transparent;
+    color: #fff; // texto en blanco para contraste
+    transition: background-color 0.3s ease;
 
+    // opcional: al hacer scroll, darle fondo sólido
+    &.scrolled {
+        // Fondo sólido o semitransparente al hacer scroll
+        background-color: rgba(255, 255, 255, 0.9); // casi sólido, ajusta opacidad
+        background-color: core.$bg-primary;
+        color: core.$brown;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
 
-    &__container {
-
-        @include container($container-widths);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-
-        // REMOVE
-        background-color: green;
-
-
-
-        // end-block .container
+    .header.scrolled .nav__options li a {
+        color: core.$brown; // estado al hacer scroll: color base
     }
 }
 
-// &__logo {
-//     /* flex-direction: column; */
-//     display: flex;
-//     justify-content: space-around;
-//     align-items: center;
-//     margin: 0;
-//     left: 0;
-//     padding: 10px 10px;
-//     color: core.$primary;
-// }
+// BEGIN header container
+.header__container {
 
-// &__logo img {
-//     width: 50px;
-//     background-image: url("assets/img/Copilot_20251106_193652.png");
-// }
+    // background: core.$bg-primary;
+    // Setup container y se adapta segun una lista de breakpoints
+    @include container($container-widths);
 
-// &__logo a {
-//     /* padding: 10px 10px; */
-//     font-size: 1.2rem;
-//     padding-right: 20px;
-// }
+    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
 
-// start-block Mobiles first
-.header__login {
-    font-weight: 500;
-    font-size: 1.1rem;
-    // LEARN - por defecto Mobile First. No se muestra
-    display: none;
+    // ❌ elimina fondo sólido
+    background: none;
+    background-color: transparent;
+    box-shadow: none;
 
-    @include respond(tablet) {
-        display: flex;
+}
+
+/* Here, everything for Ipad, Tablet and Desktop */
+@include respond(tablet) {
+    .header__container {
+        position: sticky;
+        gap: 0.5rem;
+
     }
 
+    .nav__options {
+        justify-content: flex-end; // empuja los enlaces a la derecha
+
+        li {
+            padding: 0 10px; // menos padding en tablet
+        }
+    }
 }
 
-.header__login:hover {
-    background-color: rgba(179, 51, 234, 0.729);
-    color: white;
-}
 
-// end-BLOCK .header
+// TODO:  Remover al solucionar el boton de 'Mi cuenta'
+// .header__login {
+//     font-weight: 500;
+//     font-size: 1.3rem;
+//     // LEARN - por defecto Mobile First. No se muestra
+//     display: none;
+//     // evita que el texto se parta en varias líneas */
+//     white-space: nowrap;
+
+//     button {
+//         background: core.$primary;
+//         color: #fff;
+//         border: none;
+//         padding: 0.8rem 1.2rem;
+//         border-radius: 0.5rem;
+//         cursor: pointer;
+
+//         &:hover {
+//             background-color: rgba(179, 51, 234, 0.729);
+//             color: core.$brown;
+//         }
+//     }
+// }

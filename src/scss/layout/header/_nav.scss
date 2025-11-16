@@ -2,37 +2,213 @@
 @use '../../config/mixins' as mix;
 
 nav {
+  flex: 1; // nav ocupa el resto del ancho
+}
+
+.header.scrolled .nav__options li a {
+  color: core.$brown; // estado al hacer scroll: color base
+}
+
+.nav__options {
+  // BEGIN - por defecto Mobile First. 
+  display: none;
+  opacity: 0;
+  // transform: translateY(-10px);
+  transform: translateX(-100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 
 
-  .nav__options {
+  // espacio entre ellos para despegar del extremo derecho
+  li a {
+    // padding: 0 20px;
+    color: #fff; // estado inicial: blanco sobre hero
+    transition: color 0.3s ease;
+  }
+
+  // Responsivo
+  @include mix.respond(tablet) {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    flex-direction: row;
-    // LEARN - por defecto Mobile First. No se muestra
-    display: none;
+    gap: 0.5rem;
+    opacity: 1;
+    transform: none;
 
-    @include mix.respond(tablet) {
+  }
+
+
+  &.active {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -1rem;
+    left: 0;
+    width: 70%;
+    height: 56vh;
+    overflow: hidden;
+    background: white;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    z-index: 999;
+    transition: max-height 0.3s ease;
+    transition: all 0.3s ease;
+    transform: translateX(0);
+
+    // Animación suave
+    opacity: 1;
+    transform: translateY(0);
+
+    // Esquinas redondeadas inferiores
+    // border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    // Sombra suave con tu color primario
+    box-shadow: 0 6px 12px rgba(119, 0, 240, 0.25);
+
+    transition: all 0.3s ease;
+
+    .nav__branding {
       display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+      align-items: center;
+      gap: 0.5rem;
+      // espacio para que la línea respire
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); // línea muy delgada y suave
+    }
+
+    li:last-child {
+      border-top: 1px solid rgba(0, 0, 0, 0.1); // línea muy delgada y suave
+      // margin-top: core.$margin-vertical-spacing;
+      // background-color: red;
     }
 
   }
 
-  .nav__options li a {
-    border-radius: 5px;
-    padding: 0.5em 0.7rem;
-    /* background-color: white; */
+
+
+  .nav__branding {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+
+    img {
+      width: 70px;
+      height: auto;
+      color: #fff;
+    }
+
+    .site-name {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: core.$primary;
+    }
   }
 
-  .nav__options li a:hover {
-    background-color: #a08fb0;
-    color: whitesmoke;
-    background-color: rgba(172, 107, 207, 0.383);
-    color: black;
+  .nav__options li:last-child {
+    margin-top: 12px;
+  }
+
+  .nav__login {
+    /* evita que el contenido del boton se parta en varias líneas */
+    white-space: nowrap;
+
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: 200;
+    font-family: core.$secondary-font;
+
+
+
+    .btn-account {
+      margin-top: 7px;
+      display: inline-block;
+      background-color: #7700F0; // tu color de branding
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: core.$blue;
+      }
+    }
+  }
+
+  @include mix.respond(tablet) {
+    .nav__login .btn-account {
+      padding: 6px 12px; // más compacto
+      font-size: 1.2rem;
+    }
+
+
   }
 
 
+  // Mobile menu
+  // & li a {
+  //   color: white;
+  //   margin: 0;
 
+  //   &:hover {
+  //     color: core.$primary;
+  //   }
+  // }
+
+  /* END .nav__options */
+}
+
+
+.nav__options li a {
+  // aquí aplicamos la tipografía responsiva
+  // @include mix.responsive-font(mix.$nav-font-sizes);
+
+  border-radius: 5px;
+  padding: 0.5em 0.7rem;
+}
+
+.nav__options li a:hover {
+  background-color: #a08fb0;
+  color: whitesmoke;
+  background-color: rgba(172, 107, 207, 0.383);
+  color: black;
+}
+
+// Sobrescribir en pantallas grandes
+@include mix.respond(tablet) {
+  .nav__options.active {
+    flex-direction: row;
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    gap: 1rem;
+  }
+
+}
+
+// Overlay con fade
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 3rem;
+  // right: 5rem;
+  bottom: 0;
+  // inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }

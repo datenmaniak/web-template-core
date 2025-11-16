@@ -1,6 +1,7 @@
 @use '../core' as core;
 @use "sass:map";
 @use "sass:math";
+@use "../config/" as *;
 // @import "~@fortawesome/fontawesome-free/css/all.css";
 
 
@@ -126,6 +127,7 @@ $font-sizes: (
 // Uso en elementos base
 body {
     @include font-size(body);
+    background: core.$bg-primary;
 }
 
 p {

@@ -13,6 +13,7 @@ $breakpoints: (
     tablet: 768px,
     // Tablets verticales
     laptop: 992px,
+    // laptop: 992px,
     // Laptops y tablets horizontales
     desktop: 1200px // Escritorios grandes
 );
@@ -38,7 +39,7 @@ $breakpoints: (
 // - anchos máximos del container standard 
 $container-widths: (
     phone: 540px,
-    tablet: 720px,
+    tablet: 729px,
     laptop: 960px,
     desktop: 1140px
 );
@@ -65,19 +66,24 @@ $container-narrow-widths: (
     }
 }
 
+
 //  Cualquiera de estos dos contenedores, se aplican 
 // directamente en el HTML. 
 //   Ej: <div class="container-narrow">
-.container-fluid {
+.fluid-container {
     margin: 0 auto;
     padding: 0 15px;
     max-width: 100%; // ocupa todo el ancho
 }
 
-.container-narrow {
+.narrow-container {
     @include container($container-narrow-widths);
 }
 
+.basic-container {
+    margin: 0 auto;
+    width: 100%;
+}
 
 //  G r i d 
 @mixin grid($columnas, $espaciado ) {
@@ -134,4 +140,89 @@ $container-narrow-widths: (
     &:hover {
         background-color: $hover-bg;
     }
+}
+
+/* F u e n t e s    R e s p o n s i v a s */
+// Tamaños base para listas no ordenadas y ordenadas
+$list-sizes: (
+    phone-small: 0.95rem,
+    phone: 1rem,
+    tablet: 1.05rem,
+    laptop: 1.1rem,
+    desktop: 1.15rem
+);
+// Definimos los tamaños para h1
+$h1-sizes: (
+    phone-small: 1.5rem,
+    phone: 2rem,
+    tablet: 2.8rem,
+    laptop: 3.8rem,
+    desktop: 4.7rem
+);
+// Ejemplo de mapa de tamaños para párrafos
+$p-sizes: (
+    phone-small: 0.9rem,
+    phone: 1rem,
+    tablet: 1.1rem,
+    laptop: 1.2rem,
+    desktop: 1.3rem
+);
+// Tamaños para listas anidadas (un poco más pequeñas)
+$nested-list-sizes: (
+    phone-small: 0.9rem,
+    phone: 0.95rem,
+    tablet: 1rem,
+    laptop: 1.05rem,
+    desktop: 1.1rem
+);
+/* / Tamaños de fuente para los enlaces del nav */
+$nav-font-sizes: (
+    phone-small: 1rem,
+    phone: 1.1rem,
+    tablet: 1.2rem,
+    laptop: 1.3rem,
+    desktop: 1.4rem
+);
+
+// Mixin reutilizable para tipografía responsiva
+@mixin responsive-font($sizes) {
+    @each $device, $size in $sizes {
+        @include respond($device) {
+            font-size: $size;
+        }
+    }
+}
+
+// Estilos para listas
+// ul,
+// ol {
+//     @include responsive-font($list-sizes);
+//     line-height: 1.5;
+//     margin: 0 0 1rem 1.25rem; // espacio y sangría
+//     color: #333;
+
+//     // Ajuste de marcadores
+//     list-style-position: outside;
+
+//     // Espacio entre ítems
+//     li {
+//         margin-bottom: 0.4em;
+
+//         // Listas anidadas: un paso más pequeño
+//         ul,
+//         ol {
+//             @include responsive-font($nested-list-sizes);
+//             margin-top: 0.7em;
+//             margin-left: 1.25rem;
+//         }
+//     }
+// }
+
+// Diferenciar ol con números
+ol {
+    list-style-type: decimal;
+}
+
+ul {
+    list-style-type: disc;
 }

@@ -9,45 +9,46 @@
 </head>
 
 <body>
-  <header class="header">
+  <!-- BEGIN -->
+  <header class="header" data-header>
     <div class="header__container">
-      <!-- <div class="header__logo">
-          <a href="#">Brand-name</a>
-        </div> -->
-
       <div class="logo__container">
         <a href="/" class="branding" aria-label="Inicio">
           <!-- src="assets/logo.svg" -->
-          <img src="assets/img/Copilot_20251106_193652.png" alt="Logo Violet Pulse" width="50" height="50" />
+          <img src="./assets/logos/logo-globo.png" alt="Logo Violet Pulse" width="50" height="50" />
           <span class="site-name">ACME Company</span>
         </a>
       </div>
-
       <nav>
-        <ul class="nav__options active">
-          <li><a href="">Inicio </a></li>
-          <li>
-            <a href="">Proveedores</a>
+        <ul class="nav__options">
+          <div class="nav__branding">
+            <img src="./assets/logos/logo-globo.png" alt="Logo Violet Pulse" width="50" height="50" />
+            <span class="site-name">ACME Company</span>
+          </div>
+          <li><a href="/">Inicio </a></li>
+          <li><a href="#products">Productos</a></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="">Contacto</a></li>
+          <!-- Último elemento: acceso a cuenta -->
+          <li class="nav__login">
+            <a href="login.html" class="btn-account">Mi cuenta</a>
           </li>
-          <li><a href="">Productos</a></li>
         </ul>
       </nav>
-      <div class="menuToggle" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false"></div>
+      <!--  mobile option -->
+      <div class="menuToggle" aria-label="Abrir menú" aria-expanded="false"></div>
 
-      <div class="header__login">
-        <a href="">
-          <button>Login</button>
-        </a>
-      </div>
       <!-- Botón para abrir/cerrar el menú -->
-
-      <!-- Fondo oscuro que aparece cuando el menú está abierto -->
-      <div class="overlay" onclick="toggleMenu()" aria-hidden="true"></div>
+      <div class="overlay"></div>
     </div>
   </header>
+  <!-- END -->
+
+  <!-- BEGIN     Hero -->
   <section id="hero" class="hero">
     <div class="hero__container">
-      <div class="hero__img"></div>
+      <div class="hero__img">
+      </div>
       <div class="hero__invitation">
         <h1>Registra tus productos con nosotros</h1>
         <a href="">
@@ -60,6 +61,22 @@
   <section id="about-us" class="about-us">
     <div class="about-us__container">
       <div class="about-us__img">
+        <picture class="card__picture">
+          <!-- WebP único -->
+          <source srcset="./build/img/krishna-kumar-mNOVV4Ple2A-unsplash.webp" type="image/webp">
+
+          <!-- JPG con tres tallas -->
+          <source srcset="
+        ./build/img/krishna-kumar-mNOVV4Ple2A-unsplash-sm.jpg 600w,
+        ./build/img/krishna-kumar-mNOVV4Ple2A-unsplash-md.jpg 1024w,
+        ./build/img/krishna-kumar-mNOVV4Ple2A-unsplash-lg.jpg 1600w" sizes="(max-width: 600px) 100vw,
+               (max-width: 1024px) 50vw,
+              33vw" type="image/jpeg">
+
+          <!-- Fallback absoluto -->
+          <img class="card__img" src="./build/img/krishna-kumar-mNOVV4Ple2A-unsplash-lg.jpg" alt="Producto split"
+            loading="lazy">
+        </picture>
         <!-- <img src="img/about-us/helena-lopes-2MBtXGq4Pfs-unsplash.jpg" alt="" /> -->
       </div>
       <div class="about-us__description">
@@ -85,6 +102,7 @@
     </div>
   </section>
 
+  <div id="products"></div>
   <section id="catalog" class="catalog">
     <h2>Catálogo de productos</h2>
 
@@ -277,7 +295,7 @@
   </section> <!-- catalog -->
 
 
-  <section class="palette">
+  <section class="palette narrow-container">
     <!-- Coolors Palette Widget -->
     <script src="https://coolors.co/palette-widget/widget.js"></script>
     <script data-id="019378684313780092">
@@ -299,7 +317,7 @@
     <div class="footer-container">
       <!-- Branding -->
       <div class="footer-column footer-branding">
-        <img src="assets/img/Copilot_20251106_193652.png" alt="Logo" />
+        <img src="assets/logos/logo.png" alt="Logo" />
         <a href="/">
           <h2>ACME Company</h2>
         </a>
@@ -311,7 +329,7 @@
       <div class="footer-column footer-menu">
         <h3>Menú</h3>
         <ul>
-          <li><a href="#">Inicio</a></li>
+          <li><a href="/">Inicio</a></li>
           <li><a href="#">Servicios</a></li>
           <li><a href="#">Proyectos</a></li>
           <li><a href="#">Contacto</a></li>

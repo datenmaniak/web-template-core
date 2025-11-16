@@ -1,3 +1,5 @@
+/* toggleMenu */
+
 (function () {
   'use strict';
 
@@ -5,23 +7,91 @@
     const menuToggle = document.querySelector('.menuToggle');
     const navbar = document.querySelector('.nav__options');
     const overlay = document.querySelector('.overlay');
+    /*  Login Button  */
+    const navLogin = document.querySelector('.nav__login');
+
 
     if (!menuToggle || !navbar) return;
 
     const toggleMenu = () => {
-      const isOpen = navbar.classList.toggle('is-open');
+      const isOpen = navbar.classList.toggle('active');
       menuToggle.classList.toggle('active');
       overlay?.classList.toggle('active');
 
+      // Mostrar u ocultar login según estado
+      navLogin.classList.toggle('active', isOpen);
+
       menuToggle.setAttribute('aria-expanded', isOpen);
       navbar.setAttribute('aria-hidden', !isOpen);
+    };
 
-      console.log(
-        `[Violet Pulse] Menú ${isOpen ? 'abierto' : 'cerrado'} correctamente.`
-      );
+    const closeMenu = () => {
+      navbar.classList.remove('active');
+      menuToggle.classList.remove('active');
+      overlay?.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', false);
+      navbar.setAttribute('aria-hidden', true);
+      navLogin.classList.remove('active'); // ocultar login al cerrar
     };
 
     menuToggle.addEventListener('click', toggleMenu);
-    overlay?.addEventListener('click', toggleMenu);
+    overlay?.addEventListener('click', closeMenu);
+
+    // Opcional: cerrar con ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navbar.classList.contains('active')) {
+        closeMenu();
+      }
+    });
+
+    // Cerrar al hacer click en cualquier enlace del menú
+    navbar.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (!link) return;
+
+      // Cierra el menú inmediatamente
+      if (navbar.classList.contains('active')) {
+        closeMenu();
+      }
+
+    });
+
+    // Resetea el menú si el viewport supera el breakpoint tablet
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) { // breakpoint tablet
+        closeMenu();
+        // navbar.classList.remove('active');
+        // overlay?.classList.remove('active');
+        // menuToggle.classList.remove('active');
+        // menuToggle.setAttribute('aria-expanded', false);
+        // En tablet/desktop el menú no debe estar "aria-hidden"
+        navbar.setAttribute('aria-hidden', false);
+      }
+    });
+
+
   });
+
+
+
+})();
+
+// Snippet mínimo para alternar la clase .scrolled
+(function () {
+    const header = document.querySelector('[data-header]');
+    if (!header) return;
+
+    const SCROLL_THRESHOLD = 10; // píxeles desde el top para activar
+
+    const onScroll = () => {
+        if (window.scrollY > SCROLL_THRESHOLD) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    };
+
+    // Inicial y listeners
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
 })();
