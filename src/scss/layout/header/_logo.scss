@@ -1,5 +1,5 @@
 @use '../../core/' as core;
-@use '../../config/mixins' as mix;
+@use '../../config/mixins' as *;
 
 
 .logo__container {
@@ -15,29 +15,38 @@
 
         img {
             display: block;
-            width: 50px;
+            width: 40px;
             height: auto;
             color: core.$primary;
             color: #7700f0;
             // filter: invert(90%);
         }
 
-        .site-name {
-            font-size: 1.2rem;
+        span.site-name {
+            // font-size: 1.2rem;
             font-weight: 600;
-            color: #333;
+            color: core.$primary;
 
             /* evita que el texto se parta en varias líneas */
             white-space: nowrap;
 
+            /* Dos modos de resaltado con <span> */
+            /* Modo 1 */
+            // @include responsive-font($span-sizes);
+            /* Modo 2 */
+            transition: color 0.3s ease, transform 0.3s ease;
+            @include responsive-span-brand;
+
         }
 
         &:hover .site-name {
-            color: #6a0dad; // tono violeta branding
-            color: core.$primary;
+            color: #a62dfd; // tono violeta branding
+            // color: core.$primary;
+            transform: scale(.95); // efecto de zoom al pasar
+
         }
 
-        @include mix.respond(tablet) {
+        @include respond(tablet) {
             .site-name {
                 font-size: 1.35rem;
                 // font-family: 'Violet Pulse Gothic', sans-serif;

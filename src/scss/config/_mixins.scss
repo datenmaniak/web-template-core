@@ -6,14 +6,15 @@
 
 //  B r e a k p o i n t s    B a s e
 $breakpoints: (
-    phone-small: 320px,
     // Teléfonos muy pequeños (modo retrato)
-    phone: 576px,
+    obsolete-phone: 250px,
+    phone-small: 320px,
     // Teléfonos estándar
-    tablet: 768px,
+    phone: 576px,
     // Tablets verticales
-    laptop: 992px,
+    tablet: 768px,
     // laptop: 992px,
+    laptop: 992px,
     // Laptops y tablets horizontales
     desktop: 1200px // Escritorios grandes
 );
@@ -145,16 +146,18 @@ $container-narrow-widths: (
 /* F u e n t e s    R e s p o n s i v a s */
 // Tamaños base para listas no ordenadas y ordenadas
 $list-sizes: (
-    phone-small: 0.95rem,
-    phone: 1rem,
-    tablet: 1.05rem,
-    laptop: 1.1rem,
-    desktop: 1.15rem
+    obsolete-phone: 1.5rem,
+    phone-small: 1.5rem,
+    phone: 1.9rem,
+    tablet: 1.3rem,
+    laptop: 1.4rem,
+    desktop: 1.6rem
 );
 // Definimos los tamaños para h1
 $h1-sizes: (
-    phone-small: 1.5rem,
-    phone: 2rem,
+    obsolete-phone: 1.5rem,
+    phone-small: 2.2rem,
+    phone: 1.8rem,
     tablet: 2.8rem,
     laptop: 3.8rem,
     desktop: 4.7rem
@@ -183,6 +186,28 @@ $nav-font-sizes: (
     laptop: 1.3rem,
     desktop: 1.4rem
 );
+// Tamaños responsivos para <span>
+$span-sizes: (
+    phone-small: 1.2rem,
+    // -0.1rem respecto a párrafo
+    phone: 1.5rem,
+    // -0.1rem
+    tablet: 1.5rem,
+    // -0.1rem
+    laptop: 1.7rem,
+    // -0.1rem
+    desktop: 1.8rem // -0.1rem
+);
+// Tamaños responsivos para <span> usado en branding/header
+$span-brand-sizes: (
+    obsolete-phone: 1.4rem,
+    // un poco más pequeño que h1
+    phone-small: 1.6rem,
+    phone: 1.7rem,
+    tablet: 1.4rem,
+    laptop: 1.8rem,
+    desktop: 1.9rem
+);
 
 // Mixin reutilizable para tipografía responsiva
 @mixin responsive-font($sizes) {
@@ -191,6 +216,14 @@ $nav-font-sizes: (
             font-size: $size;
         }
     }
+}
+
+// Mixin reutilizable
+@mixin responsive-span-brand {
+    @include responsive-font($span-brand-sizes);
+    font-weight: bold; // refuerza identidad
+    letter-spacing: 0.03em; // da aire tipográfico
+    color: core.$primary; // tu color #7700F0
 }
 
 // Estilos para listas

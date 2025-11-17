@@ -3,7 +3,7 @@
     const header = document.querySelector('[data-header]');
     if (!header) return;
 
-    const SCROLL_THRESHOLD = 10; // px desde el top para activar
+    const SCROLL_THRESHOLD = 50; // px desde el top para activar
 
     const onScroll = () => {
         if (window.scrollY > SCROLL_THRESHOLD) {

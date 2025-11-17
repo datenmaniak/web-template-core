@@ -19,13 +19,13 @@
         // Fondo sólido o semitransparente al hacer scroll
         background-color: rgba(255, 255, 255, 0.9); // casi sólido, ajusta opacidad
         background-color: core.$bg-primary;
-        color: core.$brown;
+        color: core.$primary;
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
     }
 
-    .header.scrolled .nav__options li a {
-        color: core.$brown; // estado al hacer scroll: color base
-    }
+    // .header.scrolled .nav__options li a {
+    //     color: core.$brown; // estado al hacer scroll: color base
+    // }
 }
 
 // BEGIN header container
