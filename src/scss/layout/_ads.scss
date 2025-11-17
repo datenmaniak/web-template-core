@@ -2,14 +2,14 @@
 @use "../config/" as *;
 
 .ads {
-  width: 100%;
+  // width: 100%;
   // background-color: core.$primary;
 
   .ads__container {
     @include container($container-widths);
 
     margin-top: 50px;
-    background-color: core.$blue;
+    background-color: core.$primary;
     color: white;
     text-align: justify;
     padding-top: 20px;
@@ -17,7 +17,27 @@
     padding: 1rem 2rem;
   }
 
-  .ads__container h2 {
+  h2 {
     text-align: center;
+    font-family: core.$secondary-font;
+    font-weight: 400;
+    @include responsive-font($section-titles-sizes);
+
+
+  }
+
+  p {
+    @include responsive-font($p-sizes);
+    text-align: center;
+    line-height: 1.6;
+
+    span {
+
+      // @include responsive-span-brand;
+      @include responsive-font($span-sizes);
+      font-style: italic;
+      font-weight: 600;
+      font-family: core.$prata;
+    }
   }
 }

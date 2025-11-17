@@ -5,11 +5,16 @@
     width: 100%;
     @include container($container-widths);
 
+
+    h2 {
+        text-align: center;
+        font-family: core.$secondary-font;
+        font-weight: 400;
+        @include responsive-font($section-titles-sizes);
+
+    }
+
     &__grid {
-        h2 {
-            text-align: center;
-            font-family: core.$secondary-font;
-        }
 
         @include grid-fluid(250px, 1.5rem);
         // fuerza que todas las cards tengan la misma altura
@@ -121,8 +126,8 @@
                     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
                 }
 
+                //* descomentar si desea incluir con efecto de caida */
                 // .card__badge,
-                /* descomentar si desea incluir con efecto */
                 .card__stars {
                     position: absolute;
                     opacity: 0; // ocultos por defecto
@@ -242,7 +247,7 @@
 
         }
 
-        /* Animación */
+        //* Animación */
         @keyframes slideDown {
             0% {
                 transform: translateY(-20px);

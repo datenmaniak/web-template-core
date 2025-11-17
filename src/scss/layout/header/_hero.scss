@@ -60,7 +60,7 @@
 
     .hero__invitation {
       position: absolute;
-      bottom: 25%;
+      bottom: 35%;
       left: 10%;
       color: white;
 
@@ -71,10 +71,18 @@
         font-family: core.$primary-font;
         text-align: left;
         font-weight: 700;
-        // font-size: 3.7rem;
         @include responsive-font($h1-sizes);
         line-height: 1.2;
+        width: 95%;
 
+      }
+
+      & h2 {
+        @include responsive-font($h2-sizes);
+        font-family: core.$secondary-font;
+        text-align: left;
+        line-height: 1.1;
+        width: 95%;
       }
 
       button {

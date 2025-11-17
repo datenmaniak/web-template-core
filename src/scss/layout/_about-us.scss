@@ -2,26 +2,27 @@
 @use "../config/" as *;
 
 .about-us {
-  width: 100%;
   // background-color: core.$primary;
 
+  @include container($container-widths);
 
   &__container {
-    @include container($container-widths);
 
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 2rem;
-    justify-content: space-around;
-    margin-top: 2rem;
+    // Habia comenzado con Flexbox para diseñar esta sección. 
+    // display: flex;
+    // text-align: center;
+    // align-items: center;
+    // gap: 2rem;
+    // justify-content: space-around;
+    // margin-top: 2rem;
 
-    // remove
-    background-color: lightseagreen;
+    // cambié el diseño/formato
+    @include grid-fluid(180px, 1.8rem);
+
 
     .about-us__img {
-      background-image: url("../../../assets/img/helena-lopes-2MBtXGq4Pfs-unsplash.jpg");
+      width: 100%;
+      // background-image: url("../../../assets/img/helena-lopes-2MBtXGq4Pfs-unsplash.jpg");
       // background-image: linear-gradient(0deg,
       // rgba(0, 0, 0, 0.5),
       // rgba(0, 0, 0, 0.5)),
@@ -29,21 +30,36 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+      max-width: 80%;
+      height: auto;
+      border-radius: 8px; // opcional, estética
+      display: block; // asegura que se comporte como bloque
+      margin: 0 auto; // centra horizontalmente
     }
 
   }
 
   .about-us__description {
-    color: white;
+    color: core.$brown;
+
+    h2 {
+      margin-bottom: 1rem;
+      @include responsive-font($h2-sizes);
+      font-weight: 500;
+      text-align: center;
+
+
+    }
+
+    p {
+      @include responsive-font($p-sizes);
+      text-align: center;
+      line-height: 1.6;
+
+    }
+
+
 
   }
-
-
-  p {
-    text-align: justify;
-    padding: 1rem 3rem;
-    color: white;
-  }
-
 
 }

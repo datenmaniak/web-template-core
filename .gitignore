@@ -2,3 +2,9 @@ node_modules
 wp
 assets/img
 fuera-de-servicio
+src/img/*
+build/img/*
+assets/hero/*
+assets/icons/*
+assets/logos/*
+assets/obsolete
